@@ -18,7 +18,7 @@ $time = 0;
         $v3 = ($v3 + $v1) - $v2;
         $time += 1;
     }
-echo $time, PHP_EOL;
+echo $time/60 . ' minutes', PHP_EOL;
 $str1 = 'Hello';
 $str2 = 'World';
 $c = $str1 . ' ' .$str2.'!';
@@ -39,3 +39,8 @@ $floatY = 0.2;
 
 echo $floatX + $floatY, PHP_EOL;
 var_dump($xyz);
+
+$input1 = readline('Enter X'. PHP_EOL);
+$input2 = readline('Enter Y'. PHP_EOL);
+
+echo $input1 + $input2, PHP_EOL;
