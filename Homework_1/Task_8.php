@@ -24,8 +24,15 @@ $firstNumber = readline('Enter value of number'. PHP_EOL);
 $secondNumber1 = $firstNumber[0].$firstNumber[3]. PHP_EOL;
 $secondNumber2 = $firstNumber[1].$firstNumber[2]. PHP_EOL;
 
-echo "Entered number is: $firstNumber";
-echo "New numbers are: $secondNumber1 and $secondNumber2";
+echo 'Entered number is: ' . $firstNumber. PHP_EOL;
+echo 'New numbers are:'. PHP_EOL . ' ' . $secondNumber1 . 'and' . $secondNumber2. PHP_EOL;
+if ($secondNumber1 > $secondNumber2) {
+    echo "($secondNumber1 > $secondNumber2)". PHP_EOL;
+} else if ($secondNumber1 < $secondNumber2) {
+    echo "($secondNumber1 < $secondNumber2)". PHP_EOL;
+} else {
+    echo "($secondNumber1 = $secondNumber2)". PHP_EOL;
+}
 
 //Second way to resolve task
 
@@ -35,4 +42,12 @@ $secondNumber1 = substr($firstNumber,0, 1). substr($firstNumber, -1).PHP_EOL;
 $secondNumber2 = substr($firstNumber,1, 1). substr($firstNumber, -2, 1).PHP_EOL;
 
 echo "Entered number is: $firstNumber". PHP_EOL;
-echo "New numbers are: $secondNumber1 and $secondNumber2";*/
+echo "New numbers are: $secondNumber1 and $secondNumber2";
+if ($secondNumber1 > $secondNumber2) {
+    echo "($secondNumber1 > $secondNumber2)". PHP_EOL;
+} else if ($secondNumber1 < $secondNumber2) {
+    echo "($secondNumber1 < $secondNumber2)". PHP_EOL;
+} else {
+    echo "($secondNumber1 = $secondNumber2)". PHP_EOL;
+}
+*/
