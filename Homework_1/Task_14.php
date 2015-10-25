@@ -17,12 +17,14 @@
 */
 
 $zone1Row = readline('Enter row of first zone 1 - 8' . PHP_EOL);
-$zone1Col = readline('Enter col of first zone 1 - 8' . PHP_EOL);
-$zone2Row = readline('Enter row of first zone 1 - 8' . PHP_EOL);
+$zone1Col = readline('Enter col of first zone A - H' . PHP_EOL);
+$zone2Row = readline('Enter row of first zone A - H' . PHP_EOL);
 $zone2Col = readline('Enter col of first zone 1 - 8' . PHP_EOL);
+$zone1Col = strtoupper($zone1Col);
+$zone2Col = strtoupper($zone2Col);
 $zone1Color = '';
 $zone2Color = '';
-/*switch ($zone1Col) {
+switch ($zone1Col) {
     case 'A': $zone1Col = 1;
         break;
     case 'B': $zone1Col = 2;
@@ -39,6 +41,7 @@ $zone2Color = '';
         break;
     case 'H': $zone1Col = 8;
         break;
+    default: echo 'You enter uncorrected value';
 }
 switch ($zone2Col) {
     case 'A': $zone2Col = 1;
@@ -57,7 +60,9 @@ switch ($zone2Col) {
         break;
     case 'H': $zone2Col = 8;
         break;
-}*/
+    default: echo 'You enter uncorrected value';
+}
+echo $zone1Col . $zone2Col . PHP_EOL;
 if ($zone1Col % 2) {                //Проверка дали колоната е нечетно число, ако е се проверява и реда
     if ($zone1Row % 2) {            //Проверява се дали реда е нечетно число и ако е нечетен означава, че цвета е Черен
         $zone1Color = 'Black';
