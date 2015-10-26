@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: just
  * Date: 23.10.15
- * Time: 08:50
+ * Time: 08:10
  */
 
 /* * Задача 6:
