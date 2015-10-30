@@ -16,10 +16,13 @@
     * Изход: Позициите са с различен цвят
 */
 
+//Enter value
 $zone1Row = readline('Enter row of first zone 1 - 8' . PHP_EOL);
 $zone1Col = readline('Enter col of first zone A - H' . PHP_EOL);
 $zone2Row = readline('Enter row of first zone A - H' . PHP_EOL);
 $zone2Col = readline('Enter col of first zone 1 - 8' . PHP_EOL);
+
+//Body
 $zone1Col = strtoupper($zone1Col);
 $zone2Col = strtoupper($zone2Col);
 $zone1Color = '';
@@ -89,6 +92,8 @@ if ($zone2Col % 2) {
         $zone2Color = 'Black';
     }
 }
+
+//Print
 if ($zone1Color == $zone2Color) {
     echo 'Zone colors are same and there color is: ' . $zone1Color . PHP_EOL;
 } else {

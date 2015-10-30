@@ -20,8 +20,11 @@
     * Изход: възходящ ред.
 */
 
+//Enter value
 echo 'Enter number between 100 and 999'. PHP_EOL;
 $number = readline('Enter value of number'. PHP_EOL);
+
+//Body & print
 $firstDigit = substr($number,0, 1);
 $secondDigit = substr($number,1, 1);
 $thirdDigit = substr($number, -1);

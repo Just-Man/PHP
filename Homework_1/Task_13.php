@@ -22,8 +22,11 @@
 */
 
 
+//Enter value
 echo 'Enter  the desired temperature' . PHP_EOL;                     //This row is unnecessary I used it for visualization in PhpStorm Console
 $temp = readline('Enter temperature');
+
+//Body & print
 if ($temp < -20) {
     echo 'Ice-cold';
 } else if ($temp > -20 && $temp < 0) {

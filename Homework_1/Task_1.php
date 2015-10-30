@@ -11,10 +11,14 @@
    *  плаваща запетая) от конзолата.
    *  Да се изведе подходящо съобщение за това дали C е между A и B.
 */
+
+//Enter value
 echo 'Enter value for A, B, C'. PHP_EOL;
 $A = readline('Enter A'. PHP_EOL);
 $B = readline('Enter B'. PHP_EOL);
 $C = readline('Enter C'. PHP_EOL);
+
+//Body and print
     if ($C > $A && $C < $B) {
         echo "Value of C:\"$C\" is between value A:\"$A\" and value B:\"$B\"";
     } else if ($A > $B) {

@@ -17,13 +17,17 @@
    * Изход: 375, 5 нечетна
 */
 
+
+//Enter value
 echo 'Enter two number between 10 and 99'. PHP_EOL;
 $firstNumber1 = readline('Enter value of number 1'. PHP_EOL);
 $firstNumber2 = readline('Enter value of number 2'. PHP_EOL);
-$secondNumber1 = $firstNumber1 * $firstNumber2;
-$secondNumber2 = substr($secondNumber1,-1);
-if ($secondNumber2 % 2) {
-    echo "The last digit of $secondNumber1 is $secondNumber2 and it si odd";
+
+//Body & print
+$newNumber = $firstNumber1 * $firstNumber2;
+$lastDigit = $newNumber % 10;
+if ($lastDigit % 2) {
+    echo "The last digit of $newNumber is $lastDigit and it is odd";
 } else {
-    echo "The last digit of $secondNumber1 is $secondNumber2 and it si even";
+    echo "The last digit of $newNumber is $lastDigit and it is even";
 }

@@ -12,15 +12,20 @@
    * целочислено деление в отделни променливи и разпечатайте тези
    * резултати.
 */
+
+//Enter value
 echo 'Enter value for A, B'. PHP_EOL;
 $A = readline('Enter A'. PHP_EOL);
 $B = readline('Enter B'. PHP_EOL);
-$sum = ($A + $B);
+
+//Body
+$sum = $A + $B;
 $deduction = $A - $B;
 $multiply = $A * $B;
 $divide = $A / $B;
 $divide1 = $A % $B;
 
+//Print
 echo "The Sum of A + B is: $sum". PHP_EOL;
 echo "The deduction of A - B is: $deduction". PHP_EOL;
 echo "The multiply of A - B is: $multiply". PHP_EOL;

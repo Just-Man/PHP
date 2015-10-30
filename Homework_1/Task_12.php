@@ -18,9 +18,12 @@
     * Изход: 1,3,2000
 */
 
+//Enter value
 $day = readline('Enter desire day');
 $month = readline('Enter desire month');
 $year = readline('Enter desire year');
+
+//Body
 switch ($month) {
     case '1' : $monthDays = 31;
         break;
@@ -61,5 +64,7 @@ if ($day < $monthDays) {
     $month = 1;
     $year += 1;
 }
+
+//Print result
 echo 'day.month.year'. PHP_EOL;
 echo $day . '.' . $month . '.'  . $year;

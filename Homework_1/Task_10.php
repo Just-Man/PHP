@@ -22,8 +22,11 @@
  *  допълнително кофа от 2 литра
 */
 
+//Enter value
 echo 'Enter the volume of tank'. PHP_EOL;
 $tank = readline('Volume of tank'. PHP_EOL);
+
+//Body
 $memTank = $tank;
 $bucket1 = 2;
 $bucket2 = 3;
@@ -33,9 +36,13 @@ $countBonusBucket1 = 0;
 $countBonusBucket2 = 0;
 $countBonusBucket = $tank % ($bucket1 + $bucket2);                              //Save the rest
 $countBucket = ($tank - $countBonusBucket) / ($bucket1 + $bucket2);             //deduct rest and divide with bucket1 +bucket2
+
+//Print
 echo 'Volume of tanks is: ' . $memTank .PHP_EOL;
 echo $countBucket . ' times with bucket of: '. $bucket1 . ' litters' . PHP_EOL;
 echo $countBucket . ' times with bucket of: '. $bucket2 . ' litters' . PHP_EOL;
+
+
 if (!($countBonusBucket % $bucket2)) {                                          //Check witch bucket to use
                 $countBonusBucket -= $bucket2;
                 $countBonusBucket2 += 1;
@@ -57,8 +64,12 @@ if ($countBonusBucket1 > 0 ) {                                                  
 //Second way to resolve task
 
 /*
+ *
+//Enter value
 echo 'Enter the volume of tank'. PHP_EOL;
 $tank = readline('Volume of tank'. PHP_EOL);
+
+//Body
 $memTank = $tank;
 $bucket1 = 2;
 $bucket2 = 3;
@@ -82,6 +93,8 @@ $countBonusBucket2 = 0;
             $countBucket += 1;
         }
     }
+
+//Print
 echo 'Volume of tanks is: ' . $memTank .PHP_EOL;
 echo $countBucket1 . ' times with bucket of: '. $bucket1 . ' litters' . PHP_EOL;
 echo $countBucket2 . ' times with bucket of: '. $bucket2 . ' litters' . PHP_EOL;

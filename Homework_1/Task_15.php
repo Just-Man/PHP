@@ -20,8 +20,11 @@
     * Изход: Добър ден
 */
 
-echo 'Enter  the desired hour in interval 0 - 24'. PHP_EOL;                     //This row is unnecessary I used it for visualization in PhpStorm Console
-$temp = readline('Enter four');
+//Enter value
+echo 'Enter  the desired hour in interval 0 - 24'. PHP_EOL;        //This row is unnecessary I used it for visualization in PhpStorm Console
+$temp = readline('Enter hour');
+
+//Body & print
 if ($temp > 18 && $temp < 4) {
     echo 'Good evening';
 } else if ($temp > 4 && $temp < 9) {
