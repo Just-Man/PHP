@@ -15,7 +15,7 @@
     * Допълнително упражнение – нарисувайте същия
     * триъгълник, но незапълнен.
 */
-/*
+
 //Enter value
 $height = readline('Enter h');
 
@@ -23,10 +23,13 @@ $height = readline('Enter h');
 
 //Body & print
 $full = 0;
-$fullSize = $height * 2;
-for ($i = 0; $i < $height; $i += 1) {
+for ($i = 0; $i <= $height; $i += 1) {
+    $fullSize = $i * 2;
     $full = $i + 1;
-    for ($j = 0; $j < $full; $j += 1){
+    for ($j = 0; $j < $height - $i; $j += 1) {
+        echo ' ';
+    }
+    for ($j = 0; $j < $fullSize - 1 ; $j += 1){
         echo '*';
     }
     echo PHP_EOL;
@@ -36,20 +39,24 @@ for ($i = 0; $i < $height; $i += 1) {
 echo  PHP_EOL;
 
 $full = 0;
-$fullSize = ($height * 2) - 1;
 
 //Body & print
 for ($i = 0; $i < $height; $i += 1) {
     $full = $i + 1;
-    for ($j = 0; $j < $full; $j += 1){
-        if($j == 0 || $j == $full - 1 || $i == $height - 1 || $i == 0){
+    $fullSize = ($i * 2) - 1;
+    for ($j = 0; $j < $height - $i - 1; $j += 1) {
+        echo ' ';
+    }
+    for ($j = 0; $j < 2 * $full - 1; $j += 1) {
+        if ($j == 0 || $j == 2 * $full - 2 || $i == $height - 1 || $i == 0) { //Проверява къде се намира елемента и и дали да е с звезда и ли да е празно поле
             echo '*';
-        } else {echo ' ';}
-
+        } else {
+            echo ' ';
+        }
     }
     echo PHP_EOL;
 }
-*/
+
 
 /*
 //Advanced
