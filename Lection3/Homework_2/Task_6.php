@@ -12,5 +12,14 @@
     * изведе сбора на всички числа между 1 и въведеното число.
 */
 
+//Enter value
 $end = readline('Enter value');
 
+//Body
+$sum = 0;
+for ($i = 1; $i <= $end; $i++) {
+    $sum += $i;
+}
+
+//Print
+echo $sum;
