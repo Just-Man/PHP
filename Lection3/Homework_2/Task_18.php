@@ -22,3 +22,12 @@
 
 
 //Enter value
+$digit1 = readline('Enter digit 1');
+$digit2 = readline('Enter digit 2');
+
+//Body & print
+for ($i = 1; $i <= $digit1; $i += 1) {
+    for ($j = 1; $j <= $digit2; $j += 1) {
+        echo $i . ' * ' . $j . ' = ' . $i*$j , PHP_EOL;
+    }
+}
