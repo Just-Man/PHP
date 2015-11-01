@@ -23,7 +23,7 @@ var_dump($counter);*/
 //min($value1, $value2) - Извежда винаги най-малката от променливите
 //max($value1, $value2) - Извежда винаги най-голямата от променливите
 
-$i = readline('Enter start number');
+/*$i = readline('Enter start number');
 $j = readline('Enter end number');
 for (; min($i, $j) <= max($i, $j); $i++) {
     if (!($i % 7) && $i > 7) {
@@ -41,4 +41,4 @@ for (; min($i, $j) <= max($i, $j); $i++) {
     $number = floor($i / 10);
     if ($number % 2)
     echo $i;
-}
+}*/
