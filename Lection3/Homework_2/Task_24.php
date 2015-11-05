@@ -13,9 +13,9 @@ $number=readline('Enter number');
 $memNumber=$number;
 $sum = 0;
 while((int)$number != 0) {
-$getLastDigit=$number%10;
-$sum = $sum* 10 + $getLastDigit;
-$number=$number/10;
+$getLastDigit=$number % 10;
+$sum = $sum * 10 + $getLastDigit;
+$number=$number / 10;
 
 }
 if($sum == $memNumber) {
