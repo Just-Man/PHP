@@ -46,6 +46,22 @@ for ($i = 0; $i < $end ; $i += 1) {
         }
     }
 }
-$final[] = $final[0];
-print_r($temp);
-print_r($final);
+if ($finalLen == $tempLen) {
+    $temp[] = $temp[0];
+    $final[] = $final[0];
+    $tempLen = count($temp);
+    $finalLen = count($final);
+    echo 'Array 1' . ' Array 2' ,PHP_EOL;
+    for ($i = 0; $i < $finalLen ; $i += 1) {
+        echo  '     ' . $temp[$i] . '     ' . $final[$i] ,PHP_EOL;
+    }
+
+} else {
+    $final[] = $final[0];
+    $finalLen = count($final);
+    echo 'Array 1' ,PHP_EOL;
+    for ($i = 0; $i < $finalLen ; $i += 1) {
+        echo  '   ' . $final[$i] ,PHP_EOL;
+    }
+
+}
