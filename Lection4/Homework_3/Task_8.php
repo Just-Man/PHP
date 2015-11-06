@@ -20,6 +20,8 @@
 $numbers = [];
 $temp = [];
 $final = [];
+$tempLen = 0;
+$finalLen = 0;
 
 
 //Enter value &n body
@@ -33,16 +35,17 @@ for ($i = 0; $i < $end ; $i += 1) {
         } else {
             $tempLen = count($temp);
             if ($tempLen > 0){
-                $temp[] = $temp[0];
-                $tempLen = count($temp);
                 $finalLen = count($final);
                 if ($finalLen < $tempLen) {
                     $final = $temp;
                     $temp = [];
-            }
+                } else {
+                    $temp = [];
+                    }
             }
         }
     }
 }
+$final[] = $final[0];
 print_r($temp);
 print_r($final);
