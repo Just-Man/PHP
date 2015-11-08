@@ -13,7 +13,7 @@
 */
 
 //Body % print
-for ($i = 101; $i < 998; $i +=1) {
+for ($i = 101; $i < 998; $i += 1) {
     $thirdDigit = $i % 10;
     $secondDigit = ($i / 10) % 10;
     $firstDigit = ($i / 100) % 10;
