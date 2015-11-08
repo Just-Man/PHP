@@ -22,54 +22,83 @@
 */
 //Enter value
 $numberCard = readline('Enter number card between 1 and 51');
+$start = microtime();
+
+//Declaration
+$card = '';
+$color = '';
 
 //Body & print
-for ($i= 0; $i < 51 ;$i += 1) {
-    $colors = $i % 13;
-    if ($colors == 0) {
-        $cards = $i;
+    $cardColor = $numberCard % 4;
+    if ($cardColor == 0) {
+        $cardNumber = $numberCard;
     } else {
-        $cards = $i % $colors +1;}
+        $cardNumber = floor($numberCard / ($cardColor + 1));}
+for ($i = $cardNumber; $i < 13; $i += 1) {
+    for ($j = $cardColor; $j <= 4; $j += 1) {
+        switch ($j) {
+            case 1:
+                $color = 'clubs (♣)';
+                break;
+            case 2;
+                $color = 'diamonds (♦)';
+                break;
+            case 3:
+                $color = 'hearts (♥)';
+                break;
+            case 4:
+                $color = 'spades (♠)';
+                break;
+            default:
+        }
 
-    if ($i >= $numberCard) {
-        switch ($colors) {
-        case 1:
-            $color = 'diamonds (♦)';
-        case 2:
-            $color = 'hearts (♥)';
-        case 3:
-            $color = 'spades (♠)';
-        default: $color = 'clubs (♣)';
-    }
-
-        switch ($cards) {
+        switch ($i) {
             case 0:
                 $card = '2';
+                break;
             case 1:
                 $card = '3';
+                break;
             case 2:
                 $card = '4';
+                break;
             case 3:
                 $card = '5';
+                break;
             case 4:
                 $card = '6';
+                break;
             case 5:
                 $card = '7';
+                break;
             case 6:
                 $card = '8';
+                break;
             case 7:
                 $card = '9';
+                break;
             case 8:
                 $card = '10';
+                break;
             case 9:
                 $card = 'Jack';
+                break;
             case 10:
                 $card = 'Queen';
+                break;
             case 11:
                 $card = 'King';
+                break;
             case 12:
                 $card = 'Ace';
+                break;
         }
-        echo 'Card is: ' . $color . $card . PHP_EOL;
+        echo 'Card is: ' . $card . ' ' . $color . PHP_EOL;
     }
+    $cardColor = 0;
+    echo PHP_EOL;
 }
+
+    $end = microtime();
+
+    echo 'First complete in: ' . ($end - $start) , PHP_EOL;
