@@ -16,3 +16,16 @@
     * Въведете число: 1
     * 1 1 2 3 5 8 13 21 34 55
 */
+
+$end = readline('Enter length of array');
+$number = readline('Enter number' . PHP_EOL);
+//Body
+for ($i = 0; $i < $end ; $i += 1) {
+    if ($i <= 1){
+        $numbers[] = $number;
+    } else {
+        $numbers[] = ($numbers[$i - 2] + $numbers[$i - 1]);
+    }
+    echo $numbers[$i] . ' ';
+}
+

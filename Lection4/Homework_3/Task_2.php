@@ -30,6 +30,8 @@ for ($i = $end-1; $i >= 0; $i -= 1) {
     $newArray[] = $numbers[$i];
 
 }
+
+//Print
 $len = count($newArray);
 for ($i = 0; $i < $len ; $i += 1) {
     echo $newArray[$i]. ' ';
