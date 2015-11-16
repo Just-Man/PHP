@@ -25,7 +25,9 @@ $end1 = readline('Enter length of array 1');
 $end2 = readline('Enter length of array 2');
 /*$numbers1 = [];
 $numbers2 = [];
+*/
 $newNumbers = [];
+/*
 //Body
 
 for ($i = 0; $i < $end1 ; $i += 1) {
@@ -39,26 +41,20 @@ for ($i = 0; $i < $end2 ; $i += 1) {
 $number1 = [18,19,32,1,3, 4, 5, 6, 7, 8];
 $number2 = [1, 2, 3,4,5,16,17,18,27,11];
 
-$short = min($end1, $end2);
-$len = max($end1, $end2);
-for ($i = 0; $i < $len -1; $i += 1) {
-    if (($short - 1) >= $i) {
+$short = min($end1, $end2) - 1;
+$len = max($end1, $end2) - 1;
+for ($i = 0; $i <= $len; $i += 1) {
+    if ($short >= $i) {
         if ($number1[$i] <= $number2[$i]) {
             $newNumbers[] = $number2[$i];
         } else {
             $newNumbers[] = $number1[$i];
         }
 
-    } else if (($short - 1) == $i) {
-        if ($number1[$i] <= $number2[$i]) {
-            $newNumbers[] = $number2[$i];
-        } else {
-            $newNumbers[] = $number1[$i];
-        }
     } else {
-        if ($end1 <= $end2) {
+        if ($end1 < $end2) {
             $newNumbers[] = $number2[$i];
-            } else if ($end1 >= $end2) {
+            } else if ($end1 > $end2) {
             $newNumbers[] = $number1[$i];
         }
     }
