@@ -25,9 +25,9 @@ for ($i = 0; $i < $end ; $i += 1) {
     $numbers[] = $number;
 }
 
-#$numbers = [7.13, 0.2, 4.9, 5.1, 6.34, 1.12];
+//$numbers = [7.13, 0.2, 4.9, 5.1, 6.34, 1.12];
 
-//Body                                                      //Масива се пренарежда по абсолутна стойност
+//Body                                                      //Масива се пренарежда по абсолютна стойност
 for ($i = 0; $i < $end; $i += 1) {
     for ($j = 0; $j < $end; $j += 1) {
         if (abs($numbers[$i]) < abs($numbers[$j])) {        //Сравняваме елементите по abs стойност
@@ -37,9 +37,10 @@ for ($i = 0; $i < $end; $i += 1) {
         }
     }
 }
+echo $end-$numberElements , PHP_EOL;
 $maxValue = array_slice($numbers, ($end-$numberElements));  //След като е приключило пренареждането взимаме желания брой стойности
 
 //Print
-for ($i = 0; $i < $end-$numberElements ; $i += 1) {
+for ($i = 0; $i < $end-($end -$numberElements) ; $i += 1) {
     echo $maxValue[$i] . ', ';
 }

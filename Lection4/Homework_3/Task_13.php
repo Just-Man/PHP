@@ -25,7 +25,7 @@ $number = floor($number / 2);
 }
 
 //Print
-
+$binary = array_reverse($binary);
 $len = count($binary);
 for ($i = 0; $i < $len ; $i += 1) {
     echo $binary[$i];

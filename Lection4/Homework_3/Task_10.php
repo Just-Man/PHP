@@ -33,7 +33,7 @@ for ($i = 0; $i < $end ; $i += 1) {
 }
 for ($i = 0; $i < $end ; $i += 1) {
     if ($i >= 1){
-        $prev = abs($average - $numbers[$i -1]);
+        $prev = abs($average - $numbers[$i - 1]);
         $current = abs($average - $numbers[$i]);
         if ($prev > $current ) {
             $min = $numbers[$i];
