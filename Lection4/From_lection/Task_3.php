@@ -21,4 +21,5 @@ echo "end";
 
 while ($j < $len) {
     $j += 1;
-    $arrays;}
+//    $arrays
+;}
