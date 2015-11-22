@@ -15,14 +15,23 @@ $number = readline('Enter positive number');
 
 //Body
 $counter = 0;
+$reversedNumber = 0;
+$binaryNumber = null;
 while ($number >= 1) {
-    if (!($number % 2)) {
         $counter++;
-    }
         $binaryNumber = $binaryNumber . $number % 2;
     $number = (int) $number / 2;
 }
-$binaryNumber = $binaryNumber << $counter;
+echo $binaryNumber , PHP_EOL;
+while ($binaryNumber > 0){
+    $lastDigit = $binaryNumber % 10;
+    $binaryNumber /= 10;
+    $reversedNumber = $reversedNumber * 10 + $lastDigit;
+    $counter -= 1;
+    if (!$counter) {
+        $binaryNumber = 0;
+    }
+}
 
 //Print
-echo $binaryNumber;
+echo $reversedNumber , PHP_EOL;
