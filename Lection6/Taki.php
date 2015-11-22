@@ -29,7 +29,7 @@ else {
 
 echo 'Разлики по позиции:' . PHP_EOL;
 for ($i = 0; $i < $shorter; $i++){
-	var_dump($array[0]);
+	var_dump($array[0][$i]);
 	var_dump($array[1]);
 	if ($array[0]{$i} == $array[1]{$i}){
 		continue;
