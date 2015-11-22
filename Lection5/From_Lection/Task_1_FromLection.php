@@ -16,7 +16,6 @@
 $arrays = [0.5, 1, -3, -0.4, 5, 4];
 $len = count($arrays);
 $count = 0;
-$value = null;
 
 for ($i = 0; $i < $len; $i += 1) {
     if ($arrays[$i] == (int)$arrays[$i]) {
