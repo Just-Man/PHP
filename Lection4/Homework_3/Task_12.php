@@ -17,3 +17,28 @@
 Изход: 2,1,4,3,6,5,7
 */
 
+
+//Enter values
+$numbers = [];
+ for ($i = 0; $i < 7; $i++) {
+ 	$input = readline('Enter desire elements');
+
+ 	if ($input !== '') {
+ 		$numbers[] = $input;
+
+ 	}
+ }
+
+//$a = [3, 45, 67, 78, 49, 20, 14];
+
+$j = $numbers[0];
+$numbers[0] = $numbers[1];
+$numbers[1] = $j;
+
+$numbers[2] += $numbers[3];
+$numbers[3] = $numbers[2] - $numbers[3];
+$numbers[2] -= $numbers[3];
+
+$numbers[4] *= $numbers[5];
+$numbers[5] = $numbers[4] / $numbers[5];
+$numbers[4] /= $numbers[5];
