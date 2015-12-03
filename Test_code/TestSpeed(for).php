@@ -40,7 +40,9 @@
 
  $start = microtime();
 
-    for($i = 0; $i < 100000; $i += 1){
+    for($i = 0; $i < 5000000; $i *= 2){
+        for($i = 0; $i < 5000000; $i *= 2){
+        }
     }
 
     $end = microtime();
