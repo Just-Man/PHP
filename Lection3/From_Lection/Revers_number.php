@@ -5,8 +5,7 @@
  * Date: 27.10.15
  * Time: 10:19
  */
-// floor - Винаги закръгля на долу (floor - като под или основа )
-//ceil - Винаги закръгля на горе
+
 
 $number = readline('Enter the number' . PHP_EOL);
 $reversed = 0;
