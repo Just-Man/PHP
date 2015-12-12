@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.clearFix {
+    zoom: 1;
+    overflow: auto;
+}
+
+.clearFix:after{
+    display: block;
+    clear: both;
+    content: " ";
+    height: 0;
+}
+
+header{
+    position: relative;
+    display: block;
+    margin: 10px auto;
+    border: 1px solid #000;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    width: 90%;
+    min-height: 120px;
+    background: url("it-talents-logo.png") no-repeat center, linear-gradient(90deg, #fff,#ccc, #fff);
+    padding: 20px;
+}
+.left{
+    /*position: absolute;*/
+    /*top: 20px;*/
+    /*right: 110px;*/
+    float: right;
+    display: inline-block;
+    border-right: 1px solid #000;
+    padding-right: 5px;
+    text-align: right;
+}
+
+.right {
+    /*position: absolute;*/
+    /*top: 20px;*/
+    /*right: 20px;*/
+    float: right;
+    margin-left: 10px;
+    display: inline-block;
+    text-align: left;
+}
+
+ul {
+    list-style-type: none ;
+}
+
+nav{
+    display: block;
+    margin: 0 auto;
+}
+
+nav>ul{
+    width: 1115px;
+    margin: 0 auto;
+}
+
+nav li{
+    width: 180px;
+    height: 25px;
+    display: inline-block;
+    border: 1px solid #cccccc;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    background: linear-gradient(#fff,#ccc, #fff);
+    text-align: center;
+}
+
+nav li:hover {
+    background: linear-gradient(#ccc, #fff, #ccc);
+}
+nav a{
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+    padding: 5px 50px 0;
+}
+
+section{
+    margin: 50px auto;
+    width: 80%;
+    min-height: 400px;
+    border: ridge;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #fff,#ccc, #fff);
+    padding: 20px;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 90%;
+}
+
+footer li{
+    display: inline-block;
+}
+.image{
+    background: #ccc;
+    width: 25px;
+}
+footer img {
+    width: 20px;
+    height: 20px;
+}
+
+th{
+    border: 1px solid #000;
+    background: #a6a6a6;
+}
+td{
+    border: 1px solid #000;
+    padding: 5px;
+}
+.content{
+    width: 950px;
+    margin: 0 auto;
+}
+fieldset{
+    display: inline-block;
+    float: left;
+    width: 300px;
+    margin: 20px 70px;
+    padding: 10px;
+}
+.labels{
+    float: left;
+    display: inline-block;
+    width: 100px;
+}
+.input{
+    float: left;
+    display: inline-block;
+    width: 50%;
+}
+label{
+    display: inline-block;
+    margin: 10px 10px 10px 5px;
+}
+
+input{
+    margin: 10px 0;
+}
+.buttons{
+    margin: 0 auto;
+    width: 100px;
+    background: #cccccc;
+}
