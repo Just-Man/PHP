@@ -14,7 +14,7 @@ if (isset($_POST['register'])) {
     $person = null;
     $person[$userName] .=
         'fName => ' . $firstName . ' ,\n lName => ' . $lastName . ' ,\n userName => ' . $userName
-        . ' ,\n mail  => ' . $mail . ' ,\n pass  => ' . $pass . ' ,\n gender => ' . $gender . PHP_EOL;
+        . ' ,\n mail  => ' . $mail . ' ,\n pass  => ' . $pass . ' ,\n gender => ' . $gender . ' ' . $_POST['pass'] . PHP_EOL;
 
     $users = fopen("user.txt", "a+") or die("Unable to open file!");
     fwrite($users,$person[$userName]);

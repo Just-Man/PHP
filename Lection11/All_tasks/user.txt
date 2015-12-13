@@ -1,2 +1,1 @@
-fName => Georgi ,\n lName => Staykov ,\n userName => JustMan ,\n mail  => g.staikov85@gmail.com ,\n pass  => d33d7685ff5372e8059ca7bf3ae53b67 ,\n gender => 1
-fName => Georgi ,\n lName => Staykov ,\n userName => Just ,\n mail  => g.staikov85@gmail.com ,\n pass  => 1666ca77ab75f7d731e645fa6ef4fc60 ,\n gender => 1
+

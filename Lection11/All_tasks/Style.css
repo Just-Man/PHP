@@ -28,25 +28,19 @@ header{
     background: url("it-talents-logo.png") no-repeat center, linear-gradient(90deg, #fff,#ccc, #fff);
     padding: 20px;
 }
-.left{
-    /*position: absolute;*/
-    /*top: 20px;*/
-    /*right: 110px;*/
-    float: right;
-    display: inline-block;
-    border-right: 1px solid #000;
-    padding-right: 5px;
-    text-align: right;
+.contact {
+    margin-left: 10px;
+    float: left;
+    text-align: left;
 }
 
-.right {
-    /*position: absolute;*/
-    /*top: 20px;*/
-    /*right: 20px;*/
-    float: right;
-    margin-left: 10px;
-    display: inline-block;
-    text-align: left;
+.contact li{
+    margin-top: 20px;
+}
+
+.map{
+    margin-left: 150px;
+    float: left;
 }
 
 ul {
@@ -127,6 +121,7 @@ td{
 .content{
     width: 950px;
     margin: 0 auto;
+    padding: 50px;
 }
 fieldset{
     display: inline-block;
@@ -182,7 +177,7 @@ input{
     box-shadow: 5px 5px 5px rgba(0, 128, 0, 0.75);
 }
 
-.colorGame button:nth-child(1),
+.colorGame button:nth-child(2),
 .colorGame button:last-child{
     -webkit-border-radius: 150% 15px;
     -moz-border-radius: 150% 15px;
@@ -214,4 +209,32 @@ input{
     top: 20px;
     left: 50%;
     font-size: 2rem;
+}
+
+h1{
+    margin: 10px auto;
+    width: 800px;
+}
+
+p.content{
+    text-align: center;
+}
+h1 ~ p.content{
+    text-align: justify;
+}
+/*
+.preview{
+    width: 200px;
+    height: 600px;
+    overflow-y: scroll;
+}*/
+.photo{
+    float: left;
+    width: 180px;
+    height: 300px;
+}
+
+.photo > img{
+    width: 160px;
+    height: 200px;
 }

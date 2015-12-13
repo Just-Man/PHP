@@ -20,6 +20,7 @@
 <div class="content clearFix">
     <div class="color" style="background: <?php echo $color ?> "></div>
     <form action="" method="post" name="ansform" class="colorGame">
+        <p>изберете съответният HEX номер, който смятате, че отговаря на показания цвят </отговаря></p>
         <button class="colorButton" name="ans" value="0"><?php echo $answers[0]?></button>
         <button class="colorButton" name="ans" value="1"><?php echo $answers[1]?></button><br>
         <button class="colorButton" name="ans" value="2"><?php echo $answers[2]?></button>
@@ -28,6 +29,7 @@
 <?php
 $ans = $_POST['ans'];
 if ($ans !== null) {
+    $score = $_SESSION['score'];
     if ($ans == $lastRand) {
         $score += 10;?>
         <p class="answer" id="right">Верен отговор</p>
@@ -35,6 +37,7 @@ if ($ans !== null) {
         $score -= 10?>
         <p class="answer" id="wrong">Грешен отговор</p>
     <?php }
+    $_SESSION['score'] = $score;
 } ?>
     <p class="score">Score: <?php echo $score?></p>
 </div>
