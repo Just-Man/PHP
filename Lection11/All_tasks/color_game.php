@@ -4,6 +4,7 @@
                '#008000', '#00FF00', '#008080', '#00FFff',
                '#000080', '#0000FF', '#800080', '#FF00FF'];
     $lastRand = null;
+    $score = 0;
 
     if (isset($_POST['ansform']) || empty($rand)) {
     $answer = array_rand($colors, 4);
@@ -16,18 +17,25 @@
     $_SESSION['rand'] = $rand;
     $color = $answers[$rand];}
 ?>
-    <div style="width: 200px;height: 200px; background: <?php echo $color ?> "></div>
-    <form action="" method="post" name="ansform">
-        <button name="ans" value="0"><?php echo $answers[0]?></button>
-        <button name="ans" value="1"><?php echo $answers[1]?></button>
-        <button name="ans" value="2"><?php echo $answers[2]?></button>
-        <button name="ans" value="3"><?php echo $answers[3]?></button>
+<div class="content clearFix">
+    <div class="color" style="background: <?php echo $color ?> "></div>
+    <form action="" method="post" name="ansform" class="colorGame">
+        <button class="colorButton" name="ans" value="0"><?php echo $answers[0]?></button>
+        <button class="colorButton" name="ans" value="1"><?php echo $answers[1]?></button><br>
+        <button class="colorButton" name="ans" value="2"><?php echo $answers[2]?></button>
+        <button class="colorButton" name="ans" value="3"><?php echo $answers[3]?></button>
     </form>
 <?php
 $ans = $_POST['ans'];
-if ($ans == $lastRand) {?>
-    <p>Верен отговор</p>
-<?php } else {?>
-    <p>Грешен отговор</p>
-<?php }
-require_once "Footer.php";?>
+if ($ans !== null) {
+    if ($ans == $lastRand) {
+        $score += 10;?>
+        <p class="answer" id="right">Верен отговор</p>
+    <?php } else {
+        $score -= 10?>
+        <p class="answer" id="wrong">Грешен отговор</p>
+    <?php }
+} ?>
+    <p class="score">Score: <?php echo $score?></p>
+</div>
+<?php require_once "Footer.php";?>

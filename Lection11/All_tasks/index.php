@@ -94,6 +94,8 @@ if (isset($_POST['register'])) {
     </div>
 <?php }
  if ($registered) {?>
+
+    <div class="content clearFix">
     <p>
         Регистрацията беше успешна сега може да се логнеш
     </p>
@@ -111,10 +113,12 @@ if (isset($_POST['register'])) {
             </div>
         </form>
     </fieldset>
+    </div>
 <?php } else if ($logged) {
     $_SESSION['logged'] = $logged;?>
+    <div class="content clearFix">
     <p> Здравей <?php echo $loginName ?></p>
     <p>Влизането ти в системата беше успешно и сега имате достъп до всички до всички страници на сайта</p>
+     </div>
 <?php }
-echo $registered;
 require_once "Footer.php" ?>
