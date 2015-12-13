@@ -221,6 +221,7 @@ p.content{
 }
 h1 ~ p.content{
     text-align: justify;
+    text-indent: 2rem;
 }
 /*
 .preview{
