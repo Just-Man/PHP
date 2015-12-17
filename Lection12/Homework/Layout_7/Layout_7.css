@@ -1,0 +1,184 @@
+.clearFix{
+    zoom: 1;
+}
+
+.clearFix:after{
+    display: block;
+    clear: both;
+    content: " ";
+    height: 0;
+}
+
+body{
+    background: #191919;
+}
+
+main > header{
+    padding: 2rem;
+}
+
+header h1{
+    display: inline-block;
+    font-size: 2.5rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+.headerMenu{
+    float: right;
+    display: inline-block;
+}
+.headerMenu li{
+    float: left;
+    color: #ccc;
+    padding: 1.5rem;
+    cursor: pointer;
+}
+
+nav{
+    margin: 0 auto;
+    background: #F53B4B;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+nav ul{
+    float: right;
+    display: inline-block;
+}
+
+nav li {
+    float: left;
+    display: inline-block;
+    padding: 1.5rem;
+    cursor: pointer;
+}
+#slide{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+#slide img{
+    width: 100%;
+    height: auto;
+}
+
+#more{
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    width: 50%;
+    border: 1px solid #f00;
+}
+
+#preview{
+    margin: 0 auto;
+    width: 1230px;
+    z-index: 9999;
+}
+
+#preview li{
+    width: 200px;
+    height: 90px;
+    display: inline-block;
+    list-style-type: none;
+    background-size: 100% 100%;
+}
+
+
+li:hover > .photo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 88%;
+    zoom: 156%;
+}
+
+.photo{
+    height: 90px;
+}
+
+.li1 {
+    background: url("Movie_1.jpg") 100% 100%;
+}
+
+.li1:hover > .photo {
+  background: url("Movie_1.jpg") no-repeat;
+}
+
+.li2 {
+    background: url("Movie_2.jpg") 100% 100%;
+}
+
+.li2:hover > .photo {
+  background: url("Movie_2.jpg") no-repeat;
+}
+
+.li3 {
+    background: url("Movie_3.jpg") 100% 100%;
+}
+
+.li3:hover > .photo {
+  background: url("Movie_3.jpg") no-repeat;
+}
+
+.li4 {
+    background: url("Movie_4.jpg") 100% 100%;
+}
+
+.li4:hover > .photo {
+  background: url("Movie_4.jpg") no-repeat;
+}
+
+
+/*
+
+
+#slide img {
+animation-name: slideFadeInOut;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+animation-duration: 20s;
+animation-direction: normal;
+}
+
+@keyframes slideFadeInOut {
+        0% {
+        opacity:1;
+    }
+    17% {
+        opacity:1;
+    }
+    25% {
+        opacity:0;
+    }
+    92% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+#slide img:nth-of-type(1) {
+    animation-delay: 9s;
+}
+#slide img:nth-of-type(2) {
+    margin-top: -420px;
+    margin-left: 20px;
+    animation-delay: 6s;
+}
+#slide img:nth-of-type(3) {
+    margin-top: -840px;
+    margin-left: 40px;
+    animation-delay: 3s;
+}
+#slide img:nth-of-type(4) {
+    margin-top: -1280px;
+    margin-left: 60px;
+    animation-delay: 0s;
+}
+
+*/
+
