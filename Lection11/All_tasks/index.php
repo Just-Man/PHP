@@ -2,6 +2,7 @@
 $registered = false;
 $userName = null;
 $loginName = null;
+$result = [];
 if (isset($_POST['register'])) {
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
@@ -33,14 +34,20 @@ if (isset($_POST['register'])) {
         if(strpos($line, $search) !== false)
         {
             $found = true;
-            $result = $line;
+            $line = explode(' ,\n',$line);
+            $len = count($line);
+            for ($i = 0; $i < $len ; $i += 1) {
+                $search = explode(' => ', $line[$i]);
+                $result[$search[0]]=$search[1];
+            }
+            break;
         }
     }
-// If the text was not found, show a message
+    // If the text was not found, show a message
     if(!$found)
     {
         echo 'Грешно потребителско име';
-    } else if ($result[$pass] = $loginPass){
+    } else if (in_array($loginPass, $result)){
         $logged = true;
     } else {
         print 'Грешна парола';

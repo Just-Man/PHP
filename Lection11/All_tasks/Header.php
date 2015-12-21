@@ -1,6 +1,4 @@
-<?php session_start();
-$logged = $_SESSION['logged'];
-?>
+<?php session_start();?>
 <!DOCTYPE HTML>
 <html>
     <head>
