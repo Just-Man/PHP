@@ -1,0 +1,23 @@
+
+div label  {
+    display: inline-block;
+    width: 8em;
+}
+
+#courtesy label{
+    width: 2rem;
+}
+
+span {
+    display: inline;
+    float: left;
+    width: 8em;
+}
+
+#birthDays, #hireDays {
+    width: 3.5em;
+}
+
+#birthDay, #hireYears {
+    width: 4.5em;
+}

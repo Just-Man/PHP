@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Add Employee</title>
+    <link rel="stylesheet" type="text/css" href="Task_1.css">
+</head>
+<body>
+<h1>Add Employee</h1>
+
+<form action="" method="post">
+    <div id="names">
+        <div>
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" placeholder="John" name="first_name" style="width:8em">
+        </div>
+        <br>
+        <div>
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" placeholder="Wayne" name="last_name" style="width:8em">
+        </div>
+        <br>
+        <div>
+            <label for="title">Title:</label>
+            <input type="text" id="title" placeholder="Sales Representative" name="title" style="width:16em">
+        </div>
+    </div>
+    <br>
+
+    <div id="courtesy">
+        <span>Title of Courtesy:</span>
+
+        <input type="radio" id="dr" value="dr." name="courtesy">
+        <label for="dr">Dr.</label>
+
+        <input type="radio" id="mr" value="mr." name="courtesy" checked="checked">
+        <label for="mr">Mr.</label>
+
+        <input type="radio" id="mrs" value="mrs." name="courtesy">
+        <label for="mrs">Mrs.</label>
+
+        <input type="radio" id="ms" value="ms." name="courtesy">
+        <label for="ms">Ms.</label>
+
+    </div>
+    <br>
+
+    <div id="dates">
+        <div>
+            <label>Birth date:</label>
+            <select name="birthMount">
+                <option selected="selected"> Select </option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+            </select>
+
+            <select name="birthDay" id="birthDays">
+                <option selected="selected"> Select </option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+
+            <select name="birthYears" id="birthMount">
+                <option selected="selected"> Select </option>
+                <option value="1909">1909</option>
+                <option value="1908">1908</option>
+                <option value="1907">1907</option>
+                <option value="1906">1906</option>
+                <option value="1905">1905</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label>Hire date:</label>
+            <select name="hireMont">
+                <option selected="selected"> Select </option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+
+            <select name="hireDay" id="hireDays">
+                <option selected="selected"> Select </option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+
+            <select name="hireYear" id="hireYears">
+                <option selected="selected"> Select </option>
+                <option value="2006">2006</option>
+                <option value="2005">2005</option>
+                <option value="2004">2004</option>
+                <option value="2003">2003</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label for="address">Address:</label>
+            <input type="text" id="address" placeholder="Enter your address" name="address">
+        </div>
+        <br>
+        <div>
+            <label for="city">City:</label>
+            <input type="text" id="city" placeholder="Enter City" name="city">
+        </div>
+        <br>
+        <div>
+            <label for="region">Region:</label>
+            <input type="text" id="region" placeholder="IA" name="region">
+        </div>
+        <br>
+        <div>
+            <label for="postal-code">Postal Code:</label>
+            <input type="number" id="postal-code" placeholder="50273" name="postal_code">
+        </div>
+        <br>
+        <div>
+            <label for="country">Country:</label>
+            <input type="text" id="country" placeholder="USA" name="country">
+        </div>
+        <br>
+        <div>
+            <label for="home-phone">Home Phone:</label>
+            <input type="tel" id="home-phone" placeholder="515-555-12-12" name="home_phone">
+        </div>
+        <br>
+        <div>
+            <label for="extension">Extension:</label>
+            <input type="number" id="extension" placeholder="1212" name="extension">
+        </div>
+    </div>
+    <br>
+
+    <div id="div-4">
+        <label for="comments">Notes:</label><br>
+        <textarea id="comments" rows="3" cols="40" name="comments" placeholder="Enter your comment."></textarea>
+    </div>
+    <br>
+
+    <div id="div-5">
+        <div>
+            <label for="manager">Manager:</label>
+            <select id="manager" name="manager" >
+                <option selected="selected"> Select </option>
+                <option value="1">bla</option>
+                <option value="2">bla bla</option>
+                <option value="3">bla bla bla</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label for="pass">Password:</label>
+            <input type="password" id="pass" placeholder="Password" name="password" style="width:8em">
+        </div>
+        <br>
+        <div>
+            <label for="repeat-pass">Repeat Password:</label>
+            <input type="password" id="repeat-pass" placeholder="Repeat Password" name="repeat_password" style="width:8em">
+        </div>
+    </div>
+    <br>
+    <div>
+        <button type="reset">Reset</button>
+        <button type="submit">Add Employee</button>
+    </div>
+</form>
+</body>
+</html>

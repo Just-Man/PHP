@@ -13,3 +13,4 @@ fName => Martin ,\n lName => Bliznachki ,\n userName => marto ,\n mail  => marto
 fName => Stan ,\n lName => Sapundzhiev ,\n userName => Stan ,\n mail  => ssap@abv.bg ,\n pass  => f52412c4ff1dacd2111f4951f3db1260 ,\n gender => 1 stan
 fName => Aglika ,\n lName => D ,\n userName => Aglika ,\n mail  => aglika.danailova@gmail.com ,\n pass  => de416a2e607f5b126a1ffd4242f412a4 ,\n gender => 2 mandarina
 fName => Georgi ,\n lName => Pichurov ,\n userName => GeorgiP ,\n mail  => georgi_pichurov@abv.bg ,\n pass  => 912ec803b2ce49e4a541068d495ab570 ,\n gender => 1 asdf
+fName => Rumiana ,\n lName => Budjeva ,\n userName => budjeva ,\n mail  => buby@abv.bg ,\n pass  => 81dc9bdb52d04dc20036dbd8313ed055 ,\n gender => 2 1234

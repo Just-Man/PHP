@@ -1,0 +1,47 @@
+
+.photo{
+    float: left;
+    width: 180px;
+    height: 300px;
+}
+
+.photo > img{
+    width: 160px;
+    height: 200px;
+}
+
+
+.content{
+    margin: 0 auto;
+    padding: 50px;
+}
+
+img{
+    width: 160px;
+    height: 200px;
+}
+
+#pic{
+    float: left;
+    margin: 1rem;
+}
+
+.clearFix{
+    zoom: 1;
+}
+
+.clearFix:after{
+    display: block;
+    clear: both;
+    content: " ";
+    height: 0;
+}
+
+nav{
+    text-align: center;
+}
+
+li{
+    display: inline-block;
+    list-style-type: none;
+}

@@ -1,0 +1,51 @@
+<body>
+<h1>Add Employee</h1>
+<form action="" method = "post">
+    <span>
+        <span>
+            <label for="first_name">First name:</label><br>
+            <label for="last_name">Last name:</label><br>
+            <label for="title">Title:    </label><br>
+            <label for="title_of_courtesy">Title of courtesy:</label><br>
+            <label for="birth_date">Birth date:</label><br>
+            <label for="hire_date" >Hire date:</label><br>
+            <label for="adress">Adress:</label><br>
+            <label for="city">City:</label><br>
+            <label for="region">Region:</label><br>
+            <label for="postal_code">Postal code:</label><br>
+            <label for="country">Country:</label><br>
+            <label for="homephone">Homephone:</label><br>
+            <label for="extension">Extension:</label><br>
+            <label for="notes">Notes:</label><br>
+        </span>
+        <span>
+            <input type="text" name="first_name" id="first_name" size="15" maxlength="20" /><br>
+            <input type="text" name="last_name" id="last_name" size="15" maxlength="20" /><br>
+            <input type="text" name="title" id="title" size="30" maxlength="30" /><br>
+            <input type="radio" name="title_of_courtesy" value="mr" checked = "checked" /> Mr<br>
+            <input type="radio" name="title_of_courtesy" value="mrs" /> Mrs<br>
+            <input type="radio" name="title_of_courtesy" value="dr" /> Dr<br>
+            <input type="radio" name="title_of_courtesy" value="ms" /> Ms<br>
+            <input type="date" name = "birth_date"><br>
+            <input type="date" name = "hire_date"><br>
+            <input type="text" name="adress" size="50" maxlength="50" /><br>
+            <input type="text" name="city" size="20" maxlength="20" /><br>
+            <input type="text" name="region" size="15" maxlength="15" /><br>
+            <input type="text" name="postal_code" size="10" maxlength="10" /><br>
+            <input type="text" name="country" size="10" maxlength="20" /><br>
+            <input type="text" name="homephone" size="20" maxlength="20" /><br>
+            <input type="text" name="extension" size="10" maxlength="10" /><br>
+            <textarea rows="4" cols ="40" id = "notes">Some text</textarea><br>
+            <select name = "managers">
+            <option value="manager1">Manager1</option>
+            <option value="manager2">Manager2</option>
+            <option value="manager3">Manager3</option>
+            </select><br>
+            <input type="password" name="password" size="15" maxlength="30" /><br>
+            <input type="password" name="rep_password" size="15" maxlength="30" /><br>
+            <input type="submit" name="add_employee" value="Add employee" />
+        </span>
+    </span>
+</form>
+
+</body>
