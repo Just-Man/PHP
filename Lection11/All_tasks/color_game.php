@@ -6,6 +6,7 @@ $colors = ['#000000', '#808080', '#C0C0C0', '#FFFFFF',
 $lastRand = null;
 $score = 0;
 $color = null;
+$ans = null;
 
     if (isset($_POST['ansform']) || empty($rand)) {
         $answer = array_rand($colors, 4);
