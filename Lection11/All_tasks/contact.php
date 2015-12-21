@@ -13,7 +13,7 @@
         <li>Man</li>
         <li>5</li>
         <li>Web 3</li>
-        <li><a href="index.php">Link</a> </li>
+        <li><a href="https://github.com/Just-Man/PHP/tree/master/Lection11/All_tasks">Link</a> </li>
         <li><a href="skype:justaman_85">justaman_85</a></li>
     </ul>
     <div class="map">

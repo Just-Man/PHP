@@ -1,21 +1,23 @@
 <?php require_once "Header.php";
-    $colors = ['#000000', '#808080', '#C0C0C0', '#FFFFFF',
-               '#800000', '#FF0000', '#808000', '#FFFF00',
-               '#008000', '#00FF00', '#008080', '#00FFff',
-               '#000080', '#0000FF', '#800080', '#FF00FF'];
-    $lastRand = null;
-    $score = 0;
+$colors = ['#000000', '#808080', '#C0C0C0', '#FFFFFF',
+           '#800000', '#FF0000', '#808000', '#FFFF00',
+           '#008000', '#00FF00', '#008080', '#00FFff',
+           '#000080', '#0000FF', '#800080', '#FF00FF'];
+$lastRand = null;
+$score = 0;
+$color = null;
 
     if (isset($_POST['ansform']) || empty($rand)) {
-    $answer = array_rand($colors, 4);
-    $answers = [];
-    for ($i = 0; $i < 4 ; $i += 1) {
-        $answers[$i] = $colors[$answer[$i]];
+        $answer = array_rand($colors, 4);
+        $answers = [];
+        for ($i = 0; $i < 4 ; $i += 1) {
+            $answers[$i] = $colors[$answer[$i]];
+        }
+        $lastRand = $_SESSION['rand'];
+        $rand = array_rand($answer, 1);
+        $_SESSION['rand'] = $rand;
+        $color = $answers[$rand];
     }
-    $lastRand = $_SESSION['rand'];
-    $rand = array_rand($answer, 1);
-    $_SESSION['rand'] = $rand;
-    $color = $answers[$rand];}
 ?>
 <div class="content clearFix">
     <div class="color" style="background: <?php echo $color ?> "></div>
