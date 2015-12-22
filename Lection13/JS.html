@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function div (){
+            var div = document.querySelector('#div1');
+            div.style.padding = '5px';
+            div.style.border = '1px solid #f00';
+            div.style.background = '#0f0';
+            div.style.width = '100px';
+            div.style.height = '100px';
+        }
+        function div1 (){
+            var div = document.querySelector('.div2');
+            div.style.padding = '5px';
+            div.style.border = '1px solid #f00';
+            div.style.background = '#000';
+            div.style.width = '100px';
+            div.style.height = '100px';
+        }
+
+        window.addEventListener('load', div1, false)
+    </script>
+</head>
+<body onload="div()">
+<div id="div1"></div>
+<div class="div2">
+    <p>some text</p>
+    <p>some text</p>
+    <p>some text<a href="">here</a></p>
+</div>
+</body>
+</html>

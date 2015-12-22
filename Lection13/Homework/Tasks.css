@@ -1,0 +1,209 @@
+
+table{
+    width: 200px;
+    border: 1px solid #000;
+}
+
+tr{
+     height: 20px;
+ }
+
+fieldset{
+    display: inline-block;
+    float: left;
+    width: 300px;
+    margin: 20px 70px;
+    padding: 10px;
+}
+.labels{
+    float: left;
+    display: inline-block;
+    width: 100px;
+}
+.input{
+    float: left;
+    display: inline-block;
+    width: 50%;
+}
+label{
+    display: inline-block;
+    margin: 10px 10px 10px 5px;
+}
+
+input{
+    margin: 10px 0;
+}
+
+.buttons{
+    margin: 0 auto;
+    width: 130px;
+}
+
+.left {
+    float: left;
+    width: 30%;
+    height: 450px;
+    margin: 20px 0 0 20px;
+    border: 1px solid #004202;
+    border-radius: 10px;
+    overflow-y: scroll;
+}
+.preview li {
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    list-style-type: none;
+}
+.li > .photo {
+    display: none;
+}
+.li1 {
+    background: url("image/Sample01.jpg");
+    background-size: 100% 100%;
+}
+.li1:hover > .photo {
+    background: url("image/Sample01.jpg");
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 10%;
+    width: 500px;
+    height: 500px;
+    z-index: 1;
+    background-size: 100% 100%;
+}
+.li2 {
+    background: url("image/Sample02.jpg");
+    background-size: 100% 100%;
+}
+.li2:hover > .photo {
+    background: url("image/Sample02.jpg");
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 10%;
+    width: 500px;
+    height: 500px;
+    z-index: 1;
+    background-size: 100% 100%;
+}
+.li3 {
+    background: url("image/Sample03.jpg");
+    background-size: 100% 100%;
+}
+.li3:hover > .photo {
+    background: url("image/Sample03.jpg");
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 10%;
+    width: 500px;
+    height: 500px;
+    z-index: 1;
+    background-size: 100% 100%;
+}
+.li4 {
+    background: url("image/Sample04.jpg");
+    background-size: 100% 100%;
+}
+.li4:hover > .photo {
+    background: url("image/Sample04.jpg");
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 10%;
+    width: 500px;
+    height: 500px;
+    z-index: 1;
+    background-size: 100% 100%;
+}
+.li5 {
+    background: url("image/Sample05.jpg");
+    background-size: 100% 100%;
+}
+.li5:hover > .photo {
+    background: url("image/Sample05.jpg");
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 10%;
+    width: 500px;
+    height: 500px;
+    z-index: 1;
+    background-size: 100% 100%;
+}
+.li6 {
+    background: url("image/Sample06.jpg");
+    background-size: 100% 100%;
+}
+.li6:hover > .photo {
+    background: url("image/Sample06.jpg");
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 10%;
+    width: 500px;
+    height: 500px;
+    z-index: 1;
+    background-size: 100% 100%;
+}
+.li7 {
+    background: url("image/Sample07.jpg");
+    background-size: 100% 100%;
+}
+.li7:hover > .photo {
+    background: url("image/Sample07.jpg");
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 10%;
+    width: 500px;
+    height: 500px;
+    z-index: 1;
+    background-size: 100% 100%;
+}
+.li8 {
+    background: url("image/Sample08.jpg");
+    background-size: 100% 100%;
+}
+.li8:hover > .photo {
+    background: url("image/Sample08.jpg");
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 10%;
+    width: 500px;
+    height: 500px;
+    z-index: 1;
+    background-size: 100% 100%;
+}
+.li9 {
+    background: url("image/Sample09.jpg");
+    background-size: 100% 100%;
+}
+.li9:hover > .photo {
+    background: url("image/Sample09.jpg");
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 10%;
+    width: 500px;
+    height: 500px;
+    z-index: 1;
+    background-size: 100% 100%;
+}
+.li10 {
+    background: url("image/Sample10.jpg");
+    background-size: 100% 100%;
+}
+.li10:hover > .photo {
+    background: url("image/Sample10.jpg");
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 10%;
+    width: 500px;
+    height: 500px;
+    z-index: 1;
+    background-size: 100% 100%;
+}
