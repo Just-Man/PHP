@@ -11,17 +11,22 @@
 
 body{
     background: #191919;
+    color: #fff;
+    text-align: center;
+}
+
+body h1{
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 main > header{
-    padding: 2rem;
+    padding: 1.5rem;
 }
 
 header h1{
     display: inline-block;
     font-size: 2.5rem;
-    color: #fff;
-    text-transform: uppercase;
 }
 .headerMenu{
     float: right;
@@ -35,19 +40,18 @@ header h1{
 }
 
 nav{
-    margin: 0 auto;
+    position: relative;
+    height: 60px;
     background: #F53B4B;
-    color: #fff;
     text-transform: uppercase;
 }
 
-nav ul{
-    float: right;
-    display: inline-block;
+nav > ul{
+    position: absolute;
+    right: 0;
 }
 
 nav li {
-    float: left;
     display: inline-block;
     padding: 1.5rem;
     cursor: pointer;
@@ -65,15 +69,41 @@ nav li {
 
 #more{
     position: absolute;
-    top: 20%;
+    top: 47%;
     left: 25%;
     width: 50%;
-    border: 1px solid #f00;
+    z-index: 2;
+}
+#more > h1{
+    margin-bottom: 20px;
+    color: #ccc;
+    font-size: 1.5rem;
 }
 
+#more > p{
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+#more li >a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ccc;
+    font-weight: bold;
+}
+
+.previewButton{
+    margin: 10px 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    padding: 15px 40px;
+}
 #preview{
     margin: 0 auto;
-    width: 1230px;
+    width: 815px;
     z-index: 9999;
 }
 
@@ -91,8 +121,8 @@ li:hover > .photo{
     top: 0;
     left: 0;
     width: 100%;
-    height: 88%;
-    zoom: 156%;
+    height: 90%;
+    zoom: 194.3%;
 }
 
 .photo{
@@ -100,37 +130,188 @@ li:hover > .photo{
 }
 
 .li1 {
-    background: url("Movie_1.jpg") 100% 100%;
+    background: url("Images/Movie_1.jpg") 100% 100%;
 }
 
 .li1:hover > .photo {
-  background: url("Movie_1.jpg") no-repeat;
+  background: url("Images/Movie_1.jpg") no-repeat;
 }
 
 .li2 {
-    background: url("Movie_2.jpg") 100% 100%;
+    background: url("Images/Movie_2.jpg") 100% 100%;
 }
 
 .li2:hover > .photo {
-  background: url("Movie_2.jpg") no-repeat;
+  background: url("Images/Movie_2.jpg") no-repeat;
 }
 
 .li3 {
-    background: url("Movie_3.jpg") 100% 100%;
+    background: url("Images/Movie_3.jpg") 100% 100%;
 }
 
 .li3:hover > .photo {
-  background: url("Movie_3.jpg") no-repeat;
+  background: url("Images/Movie_3.jpg") no-repeat;
 }
 
 .li4 {
-    background: url("Movie_4.jpg") 100% 100%;
+    background: url("Images/Movie_4.jpg") 100% 100%;
 }
 
 .li4:hover > .photo {
-  background: url("Movie_4.jpg") no-repeat;
+  background: url("Images/Movie_4.jpg") no-repeat;
 }
 
+#select{
+    padding: 3rem;
+    color: #ccc;
+    background: url("Images/radio_background_web.jpg");
+}
+
+#select h1{
+    padding: 1.5rem;
+}
+
+#radio{
+    display: inline-block;
+    text-align: left;
+}
+
+.column{
+    display: inline-block;
+    padding: 2rem;
+}
+
+#radio label {
+    color: #ccc;
+    font-weight: bold;
+}
+
+.genre{
+    position: relative;
+    margin-right: 5px;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-appearance: none;
+    background-color: transparent !important;
+}
+
+.genre:checked:after{
+    position: relative;
+    display: block;
+    content: ' ';
+    width: 8px;
+    height: 8px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background-color: #0f0;
+}
+
+.genre+label {
+    display: inline-block;
+    padding: 0.5rem 0;
+}
+
+button{
+    display: block;
+    margin: 0 auto;
+    border: #ccc solid 1px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background: transparent;
+    padding: 15px 40px;
+    color: #ccc;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+#movieGallery{
+    padding: 3rem;
+}
+
+#movieGallery h1{
+    margin-bottom: 20px;
+}
+
+.galleryPhoto{
+    margin: 2rem;
+    display: inline-block;
+    width: 230px;
+    height: 310px;
+}
+
+.galleryPhoto p{
+    margin: 0 auto;
+    width: 215px;
+}
+
+#movieGallery button{
+    margin-top: 3rem;
+}
+
+#comment{
+    background: url("Images/comment_background.jpg") 100% 100%;
+    padding: 3rem;
+}
+
+#comment h1{
+    margin-bottom: 20px;
+}
+
+.arrow {
+    margin: 0 2rem;
+    position: relative;
+    top: -90px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#comment img{
+    width: 200px;
+    height: 200px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.name{
+    margin: 1rem;
+    display: block;
+}
+
+#comment p{
+    margin: 3rem auto;
+    width: 60%;
+    text-align: justify;
+}
+
+#contact input{
+    border: 0;
+    background: transparent;
+    color: #fff;
+}
+
+#contact label:last-child{
+    display: block;
+}
+
+#contact textarea{
+    border: 0;
+    background: transparent;
+    color: #fff;
+}
+
+#map{
+}
+
+#map iframe{
+    width: 80%;
+    height: 800px;
+}
 
 /*
 

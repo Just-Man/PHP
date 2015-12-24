@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    display: block;
+    width: 100%;
+    background: #00f;
+    padding-left: 20px;
+    color: #fff;
+}
+
+main{
+    width: 90%;
+    margin: 0 auto;
+}
+
+h2{
+    margin: 20px;
+}
+
+article{
+    margin-bottom: 20px;
+    border: 1px solid #538620;
+}
+
+h3{
+    background: #538620;
+}
+
+.date{
+    margin-top: 1rem;
+    color: #555;
+}
+.url > a{
+    color: #555;
+    text-decoration: none;
+}

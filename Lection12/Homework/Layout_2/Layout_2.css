@@ -1,0 +1,20 @@
+body{
+    text-align: center;
+}
+header, footer{
+    min-height: 50px;
+    width: 100%;
+    background: #00f;
+}
+aside{
+    display: inline-block;
+    width: 39.85%;
+    min-height: 150px;
+    background: #f00;
+}
+main{
+    display: inline-block;
+    width: 59.85%;
+    min-height: 150px;
+    background: #0f0;
+}

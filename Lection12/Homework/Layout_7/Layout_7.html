@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <!--<meta http-equiv="refresh" content="5"/>-->
     <link rel="stylesheet" type="text/css" href="Layout_7.css">
-    <link rel="stylesheet" type="text/css" href="../../../reset.css">
+    <link rel="stylesheet" type="text/css" href="reset.css">
     <title>Layout 7</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
                 <li>Most popular</li>
                 <li>News</li>
                 <li>Contact</li>
-                <li><img src="search-icon.png"></li>
+                <li><img src="Images/search-icon.png"></li>
             </ul>
         </div>
 
@@ -33,45 +33,220 @@
             <li>HD movies</li>
         </ul>
     </nav>
-    <section>
-        <div id="slide" class="clearFix">
-            <div id="more">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Illo molestias nulla quasi quia. Animi deserunt eaque molestiae optio quam repellendus.</p>
-                <ul>
-                    <li class="previewButton">Load more</li>
-                    <li class="previewButton"><a href="https://www.youtube.com/watch?v=7GqClqvlObY">Watch trailer</a></li>
-                </ul>
-            </div>
-                <img src="Movie_1.jpg" alt="1">
-                <ul id="preview">
-                    <li class="li1">
-                        <p class="photo"></p>
-                    </li>
-                    <li class="li2">
-                        <p class="photo"></p>
-                    </li>
-                    <li class="li3">
-                        <p class="photo"></p>
-                    </li>
-                    <li class="li4">
-                        <p class="photo"></p>
-                    </li>
-                    <li class="li5">
-                        <p class="photo"></p>
-                    </li>
-                    <li class="li6">
-                        <p class="photo"></p>
-                    </li>
-                </ul>
+    <section id="slide" class="clearFix">
+        <div id="more">
+    <h1>Your favorite movie</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Illo molestias nulla quasi quia. Animi deserunt eaque molestiae optio quam repellendus.</p>
+            <ul>
+                <li class="previewButton"><a href="#"> Load more</a></li>
+                <li class="previewButton"><a href="https://www.youtube.com/watch?v=7GqClqvlObY">Watch trailer</a></li>
+            </ul>
         </div>
+            <img src="Images/Movie_1.jpg" alt="1">
+            <ul id="preview">
+                <li class="li1">
+                    <p class="photo"></p>
+                </li>
+                <li class="li2">
+                    <p class="photo"></p>
+                </li>
+                <li class="li3">
+                    <p class="photo"></p>
+                </li>
+                <li class="li4">
+                    <p class="photo"></p>
+                </li>
+            </ul>
+    </section>
+    <section id="select">
+        <h1>Watch your favorite movie</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium alias architecto atque aut debitis
             deserunt harum hic illo magni minima odit, officiis pariatur, porro, quasi quibusdam quisquam rem
             repellendus saepe veritatis. Assumenda dolor dolorum earum facilis ipsa laboriosam laudantium libero nemo
             perferendis reprehenderit repudiandae soluta, vel vero! A ex, in laborum neque optio perferendis quam
             quibusdam quisquam rem veritatis! Animi at aut corporis, deleniti distinctio doloribus eius error et ex
             excepturi expedita explicabo facere fugiat hic in ipsa libero magnam nam nostrum numquam placeat quae
-            quaerat qui quia quibusdam repudiandae saepe sunt temporibus tenetur totam unde vero vitae voluptates.</p>
+            quaerat qui quia quibusdam repudiandae saepe sunt temporibus tenetur totam unde vero vitae voluptates.
+        </p>
+        <form method="post" id="radio">
+            <div class="column">
+                <input type="radio" class="genre" id="action" name="genre"><label for="action">Action</label>
+                <br>
+                <input type="radio" class="genre" id="adventure" name="genre"><label for="adventure">Adventure</label>
+                <br>
+                <input type="radio" class="genre" id="animation" name="genre"><label for="animation">Animation</label>
+                <br>
+                <input type="radio" class="genre" id="biography" name="genre"><label for="biography">Biography</label>
+                <br>
+                <input type="radio" class="genre" id="comedy" name="genre"><label for="comedy">Comedy</label>
+            </div>
+            <div class="column">
+                <input type="radio" class="genre" id="crime" name="genre"><label for="crime">Crime</label>
+                <br>
+                <input type="radio" class="genre" id="documentary" name="genre"><label for="documentary">Documentary</label>
+                <br>
+                <input type="radio" class="genre" id="drama" name="genre"><label for="drama">Drama</label>
+                <br>
+                <input type="radio" class="genre" id="family" name="genre"><label for="family">Family</label>
+                <br>
+                <input type="radio" class="genre" id="fantasy" name="genre"><label for="fantasy">Fantasy</label>
+            </div>
+            <div class="column">
+                <input type="radio" class="genre" id="game_show" name="genre"><label for="game_show">Game show</label>
+                <br>
+                <input type="radio" class="genre" id="history" name="genre"><label for="history">History</label>
+                <br>
+                <input type="radio" class="genre" id="horror" name="genre"><label for="horror">Horror</label>
+                <br>
+                <input type="radio" class="genre" id="kids" name="genre"><label for="kids">Kids</label>
+                <br>
+                <input type="radio" class="genre" id="music" name="genre"><label for="music">Music</label>
+            </div>
+            <div class="column">
+                <input type="radio" class="genre" id="musical" name="genre"><label for="musical">Musical</label>
+                <br>
+                <input type="radio" class="genre" id="mystery" name="genre"><label for="mystery">Mystery</label>
+                <br>
+                <input type="radio" class="genre" id="news" name="genre"><label for="news">News</label>
+                <br>
+                <input type="radio" class="genre" id="romance" name="genre"><label for="romance">Romance</label>
+                <br>
+                <input type="radio" class="genre" id="sci_fi" name="genre"><label for="sci_fi">Sci-Fi</label>
+            </div>
+            <div class="column">
+                <input type="radio" class="genre" id="short" name="genre"><label for="short">Short</label>
+                <br>
+                <input type="radio" class="genre" id="sport" name="genre"><label for="sport">Sport</label>
+                <br>
+                <input type="radio" class="genre" id="thriller" name="genre"><label for="thriller">Thriller</label>
+                <br>
+                <input type="radio" class="genre" id="war" name="genre"><label for="war">War</label>
+                <br>
+                <input type="radio" class="genre" id="western" name="genre"><label for="western">Western</label>
+            </div>
+            <button type="button">Search</button>
+        </form>
+    </section>
+    <section id="movieGallery">
+        <h1>More movies</h1>
+        <div class="galleryPhoto clearFix">
+            <a href="#movieGallery">
+                <img src="Images/gallery_1.jpg" alt="1"></a>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, reiciendis.</p>
+        </div>
+        <div class="galleryPhoto clearFix">
+            <a href="#movieGallery">
+                <img src="Images/gallery_2.jpg" alt="2"></a>
+            <p>Animi corporis cum cumque fuga libero molestiae necessitatibus reprehenderit vitae!</p>
+        </div>
+        <div class="galleryPhoto clearFix">
+            <a href="#movieGallery">
+                <img src="Images/gallery_3.jpg" alt="3"></a>
+            <p>Asperiores consectetur error excepturi id non obcaecati perferendis praesentium suscipit?</p>
+        </div>
+        <div class="galleryPhoto clearFix">
+            <a href="#movieGallery">
+                <img src="Images/gallery_4.jpg" alt="4"></a>
+            <p>Adipisci autem dicta exercitationem ipsum laudantium nulla qui quibusdam repellat?</p>
+        </div>
+        <div class="galleryPhoto clearFix">
+            <a href="#movieGallery">
+                <img src="Images/gallery_5.jpg" alt="5"></a>
+            <p>Aut consectetur excepturi iusto numquam, repellendus repudiandae tempore veniam voluptate?</p>
+        </div>
+        <div class="galleryPhoto clearFix">
+            <a href="#movieGallery">
+                <img src="Images/gallery_6.jpg" alt="6"></a>
+            <p>Dolorem eaque error fuga incidunt nihil, nisi vel voluptatem voluptatum!</p>
+        </div>
+        <div class="galleryPhoto clearFix">
+            <a href="#movieGallery">
+                <img src="Images/gallery_7.jpg" alt="7"></a>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, facere?</p>
+        </div>
+        <div class="galleryPhoto clearFix">
+            <a href="#movieGallery">
+                <img src="Images/gallery_8.jpg" alt="8"></a>
+            <p>Ducimus eligendi fuga impedit laboriosam placeat quidem repudiandae ullam velit?</p>
+        </div>
+        <div class="galleryPhoto clearFix">
+            <a href="#movieGallery">
+                <img src="Images/gallery_9.jpg" alt="9"></a>
+            <p>Asperiores dolor eaque excepturi, magnam molestiae neque quia velit vitae.</p>
+        </div>
+        <div class="galleryPhoto clearFix">
+            <a href="#movieGallery">
+                <img src="Images/gallery_10.jpg" alt="10"></a>
+            <p>Aliquam amet aperiam cupiditate, debitis ipsam molestias non suscipit tempora!</p>
+        </div>
+        <div class="galleryPhoto clearFix">
+            <a href="#movieGallery">
+                <img src="Images/gallery_11.jpg" alt="11"></a>
+            <p>Adipisci at consequatur doloribus ducimus error facilis laudantium natus unde.</p>
+        </div>
+        <div class="galleryPhoto clearFix">
+            <a href="#movieGallery">
+                <img src="Images/gallery_12.jpg" alt="12"></a>
+            <p>Autem explicabo in inventore laborum voluptate! Consequuntur distinctio dolore suscipit!</p>
+        </div>
+        <div class="galleryPhoto clearFix">
+            <a href="#movieGallery">
+                <img src="Images/gallery_13.jpg" alt="13"></a>
+            <p>Accusamus alias cumque deserunt dolor est explicabo sapiente soluta voluptatum.</p>
+        </div>
+        <div class="galleryPhoto clearFix">
+            <a href="#movieGallery"><img src="Images/gallery_14.jpg" alt="14">
+            </a><p>Aperiam commodi doloremque fugiat hic itaque magnam, nostrum nulla reprehenderit.</p>
+        </div>
+        <div class="galleryPhoto clearFix">
+            <a href="#movieGallery">
+                <img src="Images/gallery_15.jpg" alt="15"></a>
+            <p>Debitis eos hic itaque quo similique soluta. Maxime, nobis, vel!</p>
+        </div>
+        <div class="galleryPhoto clearFix">
+            <a href="#movieGallery">
+                <img src="Images/gallery_16.jpg" alt="16"></a>
+            <p>Assumenda eaque enim error, itaque neque nostrum odio ratione ut.</p>
+        </div>
+        <div class="galleryPhoto clearFix">
+            <a href="#movieGallery">
+                <img src="Images/gallery_17.jpg" alt="17"></a>
+            <p>Cum deleniti excepturi iusto tempore voluptatum. Accusamus ipsa iusto voluptatibus!</p>
+        </div>
+        <div class="galleryPhoto clearFix">
+            <a href="#movieGallery">
+                <img src="Images/gallery_18.jpg" alt="18"></a>
+            <p>Assumenda dolor eius, fugit hic officia pariatur reiciendis tempora ullam!</p>
+        </div>
+        <button>View More</button>
+    </section>
+    <section id="comment">
+        <h1>Comments</h1>
+        <div>
+            <span class="arrow">&lt;</span>
+            <img src="Images/Profil_pic.jpg" alt="">
+            <span class="arrow">&gt;</span>
+            <span class="name">some name</span>
+            <span class="name">some fan</span>
+            <p class="comment"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi cupiditate
+                dicta distinctio dolorem enim esse et expedita illum laborum maiores minus molestiae neque nisi
+                obcaecati officia omnis optio perferendis praesentium provident quaerat quia reiciendis repellendus
+                sapiente similique vero, voluptas? A blanditiis consequatur obcaecati! Dolorum eius nostrum nulla quod
+                tempora.
+            </p>
+        </div>
+    </section>
+    <section id="contact">
+        <label for="name">Your name</label>
+        <input type="text" id="name">
+        <label for="mail">Your e-mail</label>
+        <input type="email" id="mail">
+        <label for="massage">Your massage
+        <textarea name="massage" id="massage" cols="30" rows="10"></textarea></label>
+    </section>
+    <section id="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12111.21571788213!2d-73.95422319768943!3d40.6342057957799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25ad68618b8ed%3A0xef42932ccad4845d!2s1298+37th+St%2C+Brooklyn%2C+NY+11218%2C+USA!5e0!3m2!1sen!2sbg!4v1450936097076" allowfullscreen></iframe>
     </section>
 </main>
 </body>

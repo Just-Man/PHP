@@ -1,0 +1,43 @@
+body > div{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background: url("GamblersBarnstar-by-Everstar.png");
+}
+
+#ballHolder{
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    width: 380px;
+    height: 380px;
+    -webkit-animation:spin 4s linear 3;
+    -moz-animation:spin 4s linear 3;
+    animation:spin 4s linear 3;
+}
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    100% {
+        transform:rotate(360deg);
+    }
+}
+
+#ball{
+    margin: 0 auto;
+    width: 15px;
+    height: 15px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;;
+    background: #000;
+
+}
