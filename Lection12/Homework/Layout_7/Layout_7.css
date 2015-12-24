@@ -289,23 +289,42 @@ button{
     text-align: justify;
 }
 
+#contact{
+    padding: 3rem;
+}
+
+#contact div{
+    margin-bottom: 50px;
+}
+
+#contact label{
+    border-bottom: 1px solid #ccc;
+    padding: 1rem;
+    margin-right: 2rem;
+}
+
 #contact input{
+    width: 25%;
     border: 0;
     background: transparent;
     color: #fff;
 }
 
 #contact label:last-child{
-    display: block;
+    display: inline-block;
+    margin: 0 auto;
+    width: 62.5%;
+    padding-right: 0;
+    text-align: left;
 }
 
 #contact textarea{
+    margin-top: 2rem;
     border: 0;
+    width: 91%;
+    height: 50px;
     background: transparent;
     color: #fff;
-}
-
-#map{
 }
 
 #map iframe{
@@ -313,10 +332,100 @@ button{
     height: 800px;
 }
 
+@media all and (min-width: 801px) and (max-width: 1024px) and (orientation: landscape){
+    #more{
+        top: 20%;
+    }
+
+    li:hover > .photo{
+        zoom: 105.3%;
+    }
+
+    #contact label:last-child{
+        width: 74.5%;
+    }
+
+    #contact textarea{
+        width: 85%;
+    }
+}
+
+@media all and (min-width: 801px) and (max-width: 1024px) and (orientation: portrait){
+    #more{
+        top: 17%;
+    }
+
+    #preview li{
+        width: 198px;
+    }
+
+    li:hover > .photo{
+        zoom: 100.3%;
+    }
+
+    #movieGallery{
+        padding: 3rem 0;
+    }
+
+    #contact label:last-child{
+        width: 75.5%;
+    }
+
+    #contact textarea{
+        width: 85%;
+    }
+}
+
+@media all and (max-width: 800px) and (orientation: landscape){
+    #more{
+        top: 20%;
+    }
+
+    li:hover > .photo{
+        height: 69%;
+        zoom: 105.3%;
+    }
+
+    #contact label:last-child{
+        width: 74.5%;
+    }
+
+    #contact textarea{
+        width: 85%;
+    }
+}
+
+@media all and (max-width: 800px) and (orientation: portrait){
+    #more{
+        top: 17%;
+    }
+
+    #preview li{
+        width: 198px;
+    }
+
+    li:hover > .photo{
+        zoom: 100.3%;
+    }
+
+    #movieGallery{
+        padding: 3rem 0;
+    }
+
+    #contact label:last-child{
+        width: 75.5%;
+    }
+
+    #contact textarea{
+        width: 85%;
+    }
+}
+
+/*animation*/
 /*
 
-
 #slide img {
+position: relative
 animation-name: slideFadeInOut;
 animation-timing-function: linear;
 animation-iteration-count: infinite;
