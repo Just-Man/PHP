@@ -7,8 +7,8 @@ var initialBottom,
 	planeLeft = 0,
 	planeBottom = 0,
 	speed = 5,
-    startBulletLeft,
-    startBulletBottom,
+    //startBulletLeft,
+    //startBulletBottom,
 	movement = {
 	left: false,
 	right: false,
@@ -29,15 +29,19 @@ window.addEventListener('load', function() {
         bulletLeft,
         bulletTop;
 	document.addEventListener('keydown', function(event) {
-		handleKeyEvent(event.keyCode, true)
+		handleKeyEvent(event.keyCode, true);
 	}, false);
+
+    //Move with mouse
+
+    /*
 	document.addEventListener('mousemove', function(event) {
         startBulletLeft = event.clientX;
         startBulletBottom = height - (event.clientY + planeHeight/2);
 		plane.style.left = event.clientX - planeWidth / 2 + 'px';
 		plane.style.bottom = height - (event.clientY + planeHeight / 2) + 'px';
 	},false);
-	
+	*/
 	document.addEventListener('keyup', function(event) {
 		handleKeyEvent(event.keyCode, false)
 	}, false);
@@ -111,15 +115,15 @@ window.addEventListener('load', function() {
 
     function fire () {
         shots += 0.5;
-            console.log(shots);
-            if (planeBottom || planeLeft) {
+            //if (planeBottom || planeLeft) {
                 bulletLeft = (planeLeft + planeWidth/2);
                 bulletTop = (planeBottom);
-            } else {
+            /*} else {
                 bulletLeft = startBulletLeft;
                 bulletTop = startBulletBottom;
-            }
+            }*/
             bullet.style.left = bulletLeft + 'px';
         }
+
 	updateState();
 }, false);
