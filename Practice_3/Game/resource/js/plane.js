@@ -10,6 +10,7 @@ var initialBottom,
     //startBulletLeft,
     //startBulletBottom,
     shots = -1,
+    len,
 	movement = {
 	left: false,
 	right: false,
@@ -28,8 +29,9 @@ window.addEventListener('load', function() {
 		availHeight = height - planeHeight,
 		availWidth = width - planeWidth,
         newBullet,
-        bulletLeft,
-        bulletTop;
+        i,
+        bulletLeft = [],
+        bulletTop = [];
 	document.addEventListener('keydown', function(event) {
 		handleKeyEvent(event.keyCode, true);
 	}, false);
@@ -56,13 +58,13 @@ window.addEventListener('load', function() {
             body[0].appendChild(newBullet);
             bullet[Math.floor(shots)].style.display = 'block';
             //if (planeBottom || planeLeft) {
-            bulletLeft = (planeLeft + planeWidth/2);
-            bulletTop = (planeBottom);
+            bulletLeft.push(planeLeft + planeWidth/2);
+            bulletTop.push(planeBottom + planeHeight);
             /*} else {
              bulletLeft = startBulletLeft;
              bulletTop = startBulletBottom;
              }*/
-            bullet[shots].style.left = bulletLeft + 'px';
+            bullet[shots].style.left = bulletLeft[shots] + 'px';
         }
 
     }
@@ -94,9 +96,12 @@ window.addEventListener('load', function() {
 		if (initialBottom != planeBottom) {
 			plane.style.bottom = planeBottom + 'px';			
 		}
-        if (bulletTop < height) {
-            bulletTop = speed  + bulletTop;
-            bullet[Math.floor(shots)].style.bottom = bulletTop + 'px';
+        len = bulletTop.length;
+        for (i = 0 ; i < len; i += 1) {
+            if (bulletTop[i] < height) {
+                bulletTop[i] = speed + bulletTop[i];
+                bullet[i].style.bottom = bulletTop[i] + 'px';
+            }
         }
 	}
 	/*
