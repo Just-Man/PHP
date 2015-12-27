@@ -2,9 +2,13 @@
  * 
  */
 
-var planeLeft = 0,
+var initialBottom,
+	initialLeft,
+	planeLeft = 0,
 	planeBottom = 0,
 	speed = 5,
+    startBulletLeft,
+    startBulletBottom,
 	movement = {
 	left: false,
 	right: false,
@@ -14,25 +18,33 @@ var planeLeft = 0,
 
 window.addEventListener('load', function() {
 	var plane = document.getElementById('plane'),
+		bullet = document.getElementById('bullet'),
 		width = window.innerWidth,
 		height = window.innerHeight,
 		planeHeight = 54,
 		planeWidth = 67,
 		availHeight = height - planeHeight,
-		availWidth = width - planeWidth;
-	
+		availWidth = width - planeWidth,
+        shots = 0,
+        bulletLeft,
+        bulletTop;
 	document.addEventListener('keydown', function(event) {
-		console.log(event.keyCode);
 		handleKeyEvent(event.keyCode, true)
 	}, false);
+	document.addEventListener('mousemove', function(event) {
+        startBulletLeft = event.clientX;
+        startBulletBottom = height - (event.clientY + planeHeight/2);
+		plane.style.left = event.clientX - planeWidth / 2 + 'px';
+		plane.style.bottom = height - (event.clientY + planeHeight / 2) + 'px';
+	},false);
 	
 	document.addEventListener('keyup', function(event) {
 		handleKeyEvent(event.keyCode, false)
 	}, false);
 	
 	function updatePlanePosition() {
-		var initialBottom = planeBottom;
-		var initialLeft = planeLeft;
+		initialBottom = planeBottom;
+		initialLeft = planeLeft;
 		
 		if (movement.top && planeBottom < availHeight) {
 			planeBottom += speed;
@@ -57,11 +69,15 @@ window.addEventListener('load', function() {
 		if (initialBottom != planeBottom) {
 			plane.style.bottom = planeBottom + 'px';			
 		}
+        if (bulletTop < height) {
+            bulletTop = speed  + bulletTop;
+            bullet.style.bottom = bulletTop + 'px';
+        }
 	}
-	
-	/*setInterval(function() {
+	/*
+	setInterval(function() {
 		updatePlanePosition()
-	}, 1000/30)*/
+	}, 1000/30);*/
 	
 	function updateState() {
 		updatePlanePosition();
@@ -86,10 +102,24 @@ window.addEventListener('load', function() {
 		if (event.keyCode == 39) {
 			movement.right = pressed;
 		}
+
+		if (event.keyCode == 32) {
+			fire();
+		}
+
 	}
+
+    function fire () {
+        shots += 0.5;
+            console.log(shots);
+            if (planeBottom || planeLeft) {
+                bulletLeft = (planeLeft + planeWidth/2);
+                bulletTop = (planeBottom);
+            } else {
+                bulletLeft = startBulletLeft;
+                bulletTop = startBulletBottom;
+            }
+            bullet.style.left = bulletLeft + 'px';
+        }
 	updateState();
-
-	function fire (keyCode) {
-
-	}
 }, false);
