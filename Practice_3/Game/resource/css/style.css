@@ -69,7 +69,8 @@ body {
     z-index: 2;
 }
 
-#bullet {
+.bullet {
+    display: none;
     position: absolute;
     left: 0;
     bottom: 0;
