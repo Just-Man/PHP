@@ -93,7 +93,7 @@ window.addEventListener('load', function() {
 		if (keyCode == 38) {
 			movement.top = pressed;
 		}
-		
+
 		if (keyCode == 40) {
 			movement.bottom = pressed;
 		}
