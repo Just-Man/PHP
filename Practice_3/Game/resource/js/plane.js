@@ -90,24 +90,23 @@ window.addEventListener('load', function() {
 	
 	function handleKeyEvent(keyCode, pressed) {
 		event.preventDefault();
-		
-		if (event.keyCode == 38) {
+		if (keyCode == 38) {
 			movement.top = pressed;
 		}
 		
-		if (event.keyCode == 40) {
+		if (keyCode == 40) {
 			movement.bottom = pressed;
 		}
 		
-		if (event.keyCode == 37) {
+		if (keyCode == 37) {
 			movement.left = pressed;
 		}
 		
-		if (event.keyCode == 39) {
+		if (keyCode == 39) {
 			movement.right = pressed;
 		}
 
-		if (event.keyCode == 32) {
+		if (keyCode == 32) {
 			fire();
 		}
 
