@@ -22,17 +22,6 @@ body {
     background: #0f0;
 }*/
 
-#plane{
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background: url("../images/galaxy.png") no-repeat;
-    width: 67px;
-    height: 54px;
-    margin: 0;
-    z-index: 2;
-}
-
 .stage.first {
     -webkit-animation: first 6s linear infinite;
     animation: first 6s linear infinite;
@@ -68,4 +57,25 @@ body {
     }
 
 }
+
+#plane{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: url("../images/galaxy.png") no-repeat;
+    width: 67px;
+    height: 54px;
+    margin: 0;
+    z-index: 2;
+}
+
+#bullet {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 2px;
+    height: 10px;
+    background: #ff0;
+}
+
 
