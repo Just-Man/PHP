@@ -123,11 +123,11 @@ window.addEventListener('load', function() {
 		if (keyCode == 40) {
 			movement.bottom = pressed;
 		}
-		
+
 		if (keyCode == 37) {
 			movement.left = pressed;
 		}
-		
+
 		if (keyCode == 39) {
 			movement.right = pressed;
 		}
