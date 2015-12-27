@@ -9,6 +9,7 @@ var initialBottom,
 	speed = 5,
     //startBulletLeft,
     //startBulletBottom,
+    shots = -1,
 	movement = {
 	left: false,
 	right: false,
@@ -17,15 +18,16 @@ var initialBottom,
 };
 
 window.addEventListener('load', function() {
-	var plane = document.getElementById('plane'),
-		bullet = document.getElementById('bullet'),
+	var body = document.getElementsByTagName('body'),
+        plane = document.getElementById('plane'),
+		bullet = document.getElementsByClassName('bullet'),
 		width = window.innerWidth,
 		height = window.innerHeight,
 		planeHeight = 54,
 		planeWidth = 67,
 		availHeight = height - planeHeight,
 		availWidth = width - planeWidth,
-        shots = 0,
+        newBullet,
         bulletLeft,
         bulletTop;
 	document.addEventListener('keydown', function(event) {
@@ -45,6 +47,25 @@ window.addEventListener('load', function() {
 	document.addEventListener('keyup', function(event) {
 		handleKeyEvent(event.keyCode, false)
 	}, false);
+
+    function fire () {
+        shots += 0.5;
+        if (shots == Math.floor(shots)){
+            newBullet = document.createElement('div');
+            newBullet.className = 'bullet';
+            body[0].appendChild(newBullet);
+            bullet[Math.floor(shots)].style.display = 'block';
+            //if (planeBottom || planeLeft) {
+            bulletLeft = (planeLeft + planeWidth/2);
+            bulletTop = (planeBottom);
+            /*} else {
+             bulletLeft = startBulletLeft;
+             bulletTop = startBulletBottom;
+             }*/
+            bullet[shots].style.left = bulletLeft + 'px';
+        }
+
+    }
 	
 	function updatePlanePosition() {
 		initialBottom = planeBottom;
@@ -75,7 +96,7 @@ window.addEventListener('load', function() {
 		}
         if (bulletTop < height) {
             bulletTop = speed  + bulletTop;
-            bullet.style.bottom = bulletTop + 'px';
+            bullet[Math.floor(shots)].style.bottom = bulletTop + 'px';
         }
 	}
 	/*
@@ -111,18 +132,6 @@ window.addEventListener('load', function() {
 		}
 
 	}
-
-    function fire () {
-        shots += 0.5;
-            //if (planeBottom || planeLeft) {
-                bulletLeft = (planeLeft + planeWidth/2);
-                bulletTop = (planeBottom);
-            /*} else {
-                bulletLeft = startBulletLeft;
-                bulletTop = startBulletBottom;
-            }*/
-            bullet.style.left = bulletLeft + 'px';
-        }
 
 	updateState();
 }, false);
