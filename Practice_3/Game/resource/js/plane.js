@@ -30,11 +30,46 @@ window.addEventListener('load', function() {
 		availWidth = width - planeWidth,
         newBullet,
         i,
+        capsLock,
+        bulletsNumber = 100,
+        existBullets,
         bulletLeft = [],
         bulletTop = [];
+
+    function checkSize () {
+		width = window.innerWidth;
+		height = window.innerHeight;
+    }
+
+    setInterval(function () {
+        checkSize();
+    }, 10000);
+
+    window.onkeydown = function(e) {
+        return !(e.keyCode == 32 || e.keyCode == 40);
+    };
+
 	document.addEventListener('keydown', function(event) {
 		handleKeyEvent(event.keyCode, true);
 	}, false);
+
+	document.addEventListener('keydown', function(window) {
+		handleKeyEvent(window.charCode, true);
+	}, false);
+
+    document.addEventListener('keyup', function(event) {
+        handleKeyEvent(event.keyCode, false)
+    }, false);
+
+    function checkCaps () {
+        document.addEventListener('keydown', function(event) {
+            capsLock = event.getModifierState('CapsLock');
+        }, false);
+    }
+
+    setInterval(function () {
+        checkCaps();
+    }, 1000);
 
     //Move with mouse
 
@@ -46,18 +81,18 @@ window.addEventListener('load', function() {
 		plane.style.bottom = height - (event.clientY + planeHeight / 2) + 'px';
 	},false);
 	*/
-	document.addEventListener('keyup', function(event) {
-		handleKeyEvent(event.keyCode, false)
-	}, false);
+
 
     function fire () {
         shots += 0.5;
-        if (shots == Math.floor(shots)){
+        if (shots == Math.floor(shots)  && shots <= bulletsNumber){
+            existBullets = bulletsNumber - shots;
+            console.log(existBullets);
             newBullet = document.createElement('div');
             newBullet.className = 'bullet';
             body[0].appendChild(newBullet);
             bullet[Math.floor(shots)].style.display = 'block';
-            //if (planeBottom || planeLeft) {
+            //if (!capsLock) {
             bulletLeft.push(planeLeft + planeWidth/2);
             bulletTop.push(planeBottom + planeHeight);
             /*} else {
@@ -114,25 +149,25 @@ window.addEventListener('load', function() {
 		requestAnimationFrame(updateState)
 	}
 	
-	function handleKeyEvent(keyCode, pressed) {
-		event.preventDefault();
-		if (keyCode == 38) {
+	function handleKeyEvent(keyCode, pressed, charCode) {
+		//window.event.preventDefault();
+		if (charCode || keyCode == 38) {
 			movement.top = pressed;
 		}
 
-		if (keyCode == 40) {
+		if (charCode || keyCode == 40) {
 			movement.bottom = pressed;
 		}
 
-		if (keyCode == 37) {
+		if (charCode || keyCode == 37) {
 			movement.left = pressed;
 		}
 
-		if (keyCode == 39) {
+		if (charCode || keyCode == 39) {
 			movement.right = pressed;
 		}
 
-		if (keyCode == 32) {
+		if (charCode || keyCode == 32) {
 			fire();
 		}
 
