@@ -6,7 +6,10 @@ var initialBottom,
 	initialLeft,
 	planeLeft = 0,
 	planeBottom = 0,
+    enemyLeft = 0,
+    enemyTop = 0,
 	speed = 5,
+    enemySpeed = 3,
     //startBulletLeft,
     //startBulletBottom,
     shots = -1,
@@ -20,47 +23,68 @@ var initialBottom,
 
 window.addEventListener('load', function() {
 	var body = document.getElementsByTagName('body'),
+        game = document.getElementById('game'),
+        gameOver = document.getElementById('gameOver'),
         plane = document.getElementById('plane'),
+        enemy = document.getElementById('enemy'),
 		bullet = document.getElementsByClassName('bullet'),
+        actualScore = document.getElementById('actualScore'),
+        actualBullets = document.getElementById('actualBullets'),
 		width = window.innerWidth,
 		height = window.innerHeight,
 		planeHeight = 54,
 		planeWidth = 67,
-		availHeight = height - planeHeight,
-		availWidth = width - planeWidth,
+        rightMove,
+        enemyHeight = 54,
+        enemyWidth = 67,
+        availEnemyWidth = width - enemyWidth,
+        availEnemyHeight = height - enemyHeight,
+		availPlaneHeight = height - planeHeight,
+		availPlaneWidth = width - planeWidth,
         newBullet,
         i,
         capsLock,
-        bulletsNumber = 100,
+        bulletsNumber = 99,
         existBullets,
+        hit = 0,
+        score = 0,
+        lastScore = 0,
         bulletLeft = [],
-        bulletTop = [];
+        bulletTop = [],
+        over = false;
 
     function checkSize () {
 		width = window.innerWidth;
 		height = window.innerHeight;
+        availEnemyWidth = width - enemyWidth;
+        availEnemyHeight =height - enemyHeight;
+		availPlaneHeight = height - planeHeight;
+		availPlaneWidth = width - planeWidth;
     }
 
     setInterval(function () {
         checkSize();
-    }, 10000);
+    }, 1000);
 
     window.onkeydown = function(e) {
         return !(e.keyCode == 32 || e.keyCode == 40);
     };
 
 	document.addEventListener('keydown', function(event) {
-		handleKeyEvent(event.keyCode, true);
+		keyControls(event.keyCode, true);
 	}, false);
 
 	document.addEventListener('keydown', function(window) {
-		handleKeyEvent(window.charCode, true);
+		keyControls(window.charCode, true);
 	}, false);
 
     document.addEventListener('keyup', function(event) {
-        handleKeyEvent(event.keyCode, false)
+        keyControls(event.keyCode, false)
     }, false);
 
+    //Move with mouse
+
+    /*
     function checkCaps () {
         document.addEventListener('keydown', function(event) {
             capsLock = event.getModifierState('CapsLock');
@@ -71,9 +95,6 @@ window.addEventListener('load', function() {
         checkCaps();
     }, 1000);
 
-    //Move with mouse
-
-    /*
 	document.addEventListener('mousemove', function(event) {
         startBulletLeft = event.clientX;
         startBulletBottom = height - (event.clientY + planeHeight/2);
@@ -82,12 +103,34 @@ window.addEventListener('load', function() {
 	},false);
 	*/
 
+    function keyControls (keyCode, pressed, charCode) {
+        //window.event.preventDefault();
+        if (charCode || keyCode == 38) {
+            movement.top = pressed;
+        }
+
+        if (charCode || keyCode == 40) {
+            movement.bottom = pressed;
+        }
+
+        if (charCode || keyCode == 37) {
+            movement.left = pressed;
+        }
+
+        if (charCode || keyCode == 39) {
+            movement.right = pressed;
+        }
+
+        if (charCode || keyCode == 32) {
+            fire();
+        }
+
+    }
 
     function fire () {
         shots += 0.5;
         if (shots == Math.floor(shots)  && shots <= bulletsNumber){
             existBullets = bulletsNumber - shots;
-            console.log(existBullets);
             newBullet = document.createElement('div');
             newBullet.className = 'bullet';
             body[0].appendChild(newBullet);
@@ -104,11 +147,11 @@ window.addEventListener('load', function() {
 
     }
 	
-	function updatePlanePosition() {
+	function planeMove() {
 		initialBottom = planeBottom;
 		initialLeft = planeLeft;
 		
-		if (movement.top && planeBottom < availHeight) {
+		if (movement.top && planeBottom < availPlaneHeight) {
 			planeBottom += speed;
 		}
 		
@@ -120,7 +163,7 @@ window.addEventListener('load', function() {
 			planeLeft -= speed;
 		}
 		
-		if (movement.right && planeLeft < availWidth) {
+		if (movement.right && planeLeft < availPlaneWidth) {
 			planeLeft += speed;
 		}
 		
@@ -131,46 +174,89 @@ window.addEventListener('load', function() {
 		if (initialBottom != planeBottom) {
 			plane.style.bottom = planeBottom + 'px';			
 		}
+	}
+
+    function enemyMove () {
+
+        if (enemyTop <= availEnemyHeight){
+            if (enemyLeft <= 0 && lastScore == score) {
+                rightMove = true;
+                speed += 1;
+            }
+            if (enemyLeft < availEnemyWidth && rightMove) {
+                enemyLeft += enemySpeed;
+                enemy.style.left = enemyLeft + 'px';
+            } else {
+                rightMove = false;
+                enemyLeft -= enemySpeed;
+                enemy.style.left = enemyLeft + 'px';
+            }
+            if (enemyLeft >= availEnemyWidth || !enemyLeft && !hit) {
+                enemyTop += enemyHeight;
+            }
+                enemy.style.top = enemyTop + 'px'
+        } else {
+            over = true;
+            game.style.display = 'none';
+            gameOver.style.display = 'block';
+            gameOver.style.display = 'block';
+            gameOver.innerHTML = "<h1>You lose</h1>";
+            gameOver.style.color = '#f00';
+        }
+    }
+
+    function bulletMove () {
+        lastScore = score;
         len = bulletTop.length;
         for (i = 0 ; i < len; i += 1) {
-            if (bulletTop[i] < height) {
+            if (bulletTop[i] <= (availEnemyHeight - enemyTop + enemyHeight)
+                    && bulletTop[i] >= (availEnemyHeight - enemyTop )
+                    && bulletLeft[i] >= enemyLeft
+                    && bulletLeft[i] <= (enemyLeft + enemyWidth)) {
+                hit = 1;
+                bullet[i].style.display = 'none';
+                bulletLeft[i] = -1;
+                bulletTop[i] = 0;
+                enemyLeft = 1;
+                enemyTop = 0;
+            }
+            if (bulletTop[i] < height && !hit && bulletTop[i] != 0) {
                 bulletTop[i] = speed + bulletTop[i];
                 bullet[i].style.bottom = bulletTop[i] + 'px';
             }
+            score += hit;
+            if (hit) {
+                actualScore.innerHTML = score;
+            }
+            actualBullets.innerHTML = existBullets;
+            hit = 0;
         }
-	}
-	/*
-	setInterval(function() {
-		updatePlanePosition()
-	}, 1000/30);*/
-	
+    }
+
+    function gameResult () {
+        if (existBullets < 1 && score > 70) {
+            over = true;
+            game.style.display = 'none';
+            gameOver.style.display = 'block';
+            gameOver.innerHTML = "<h1>You WIN</h1>"
+        } else if (existBullets < 1 && score < 70){
+            over = true;
+            game.style.display = 'none';
+            gameOver.style.display = 'block';
+            gameOver.innerHTML = "<h1>You lose</h1>";
+            gameOver.style.color = '#f00';
+        }
+    }
+
 	function updateState() {
-		updatePlanePosition();
+		planeMove();
+        enemyMove();
+        bulletMove();
+        gameResult();
+        if(over) {
+            return false;
+        }
 		requestAnimationFrame(updateState)
-	}
-	
-	function handleKeyEvent(keyCode, pressed, charCode) {
-		//window.event.preventDefault();
-		if (charCode || keyCode == 38) {
-			movement.top = pressed;
-		}
-
-		if (charCode || keyCode == 40) {
-			movement.bottom = pressed;
-		}
-
-		if (charCode || keyCode == 37) {
-			movement.left = pressed;
-		}
-
-		if (charCode || keyCode == 39) {
-			movement.right = pressed;
-		}
-
-		if (charCode || keyCode == 32) {
-			fire();
-		}
-
 	}
 
 	updateState();
