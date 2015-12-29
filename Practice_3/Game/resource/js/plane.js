@@ -7,7 +7,7 @@ var initialBottom,
 	planeLeft = 0,
 	planeBottom = 0,
     enemyLeft = 0,
-    enemyTop = 0,
+    enemyTop = 54,
 	speed = 5,
     enemySpeed = 3,
     //startBulletLeft,
@@ -15,11 +15,11 @@ var initialBottom,
     shots = -1,
     len,
 	movement = {
-	left: false,
-	right: false,
-	top: false,
-	bottom: false
-};
+                    left: false,
+                    right: false,
+                    top: false,
+                    bottom: false
+                };
 
 window.addEventListener('load', function() {
 	var body = document.getElementsByTagName('body'),
@@ -43,7 +43,7 @@ window.addEventListener('load', function() {
 		availPlaneWidth = width - planeWidth,
         newBullet,
         i,
-        capsLock,
+        //capsLock,
         bulletsNumber = 99,
         existBullets,
         hit = 0,
@@ -218,7 +218,7 @@ window.addEventListener('load', function() {
                 bulletLeft[i] = -1;
                 bulletTop[i] = 0;
                 enemyLeft = 1;
-                enemyTop = 0;
+                enemyTop = 54;
             }
             if (bulletTop[i] < height && !hit && bulletTop[i] != 0) {
                 bulletTop[i] = speed + bulletTop[i];
@@ -234,12 +234,13 @@ window.addEventListener('load', function() {
     }
 
     function gameResult () {
-        if (existBullets < 1 && score > 70) {
+        if (existBullets < 1 && score > 70 &&
+            (bulletTop[len-1] >= height - 1 || bulletTop[len-1] == 0)) {
             over = true;
             game.style.display = 'none';
             gameOver.style.display = 'block';
             gameOver.innerHTML = "<h1>You WIN</h1>"
-        } else if (existBullets < 1 && score < 70){
+        } else if (existBullets < 1 && score < 70 && bulletTop[len-1] >= height - 1){
             over = true;
             game.style.display = 'none';
             gameOver.style.display = 'block';
