@@ -3,44 +3,44 @@
  */
 
 var initialBottom,
-	initialLeft,
-	planeLeft = 0,
-	planeBottom = 0,
+    initialLeft,
+    planeLeft = 0,
+    planeBottom = 0,
     enemyLeft = 0,
     enemyTop = 54,
-	speed = 5,
+    speed = 5,
     enemySpeed = 3,
     //startBulletLeft,
     //startBulletBottom,
     shots = -1,
     len,
-	movement = {
-                    left: false,
-                    right: false,
-                    top: false,
-                    bottom: false
-                };
+    movement = {
+        left: false,
+        right: false,
+        top: false,
+        bottom: false
+    };
 
-window.addEventListener('load', function() {
-	var body = document.getElementsByTagName('body'),
+window.addEventListener('load', function () {
+    var body = document.getElementsByTagName('body'),
         game = document.getElementById('game'),
         gameOver = document.getElementById('gameOver'),
         plane = document.getElementById('plane'),
         enemy = document.getElementById('enemy'),
-		bullet = document.getElementsByClassName('bullet'),
+        bullet = document.getElementsByClassName('bullet'),
         actualScore = document.getElementById('actualScore'),
         actualBullets = document.getElementById('actualBullets'),
-		width = window.innerWidth,
-		height = window.innerHeight,
-		planeHeight = 54,
-		planeWidth = 67,
+        width = window.innerWidth,
+        height = window.innerHeight,
+        planeHeight = 54,
+        planeWidth = 67,
         rightMove,
         enemyHeight = 54,
         enemyWidth = 67,
         availEnemyWidth = width - enemyWidth,
         availEnemyHeight = height - enemyHeight,
-		availPlaneHeight = height - planeHeight,
-		availPlaneWidth = width - planeWidth,
+        availPlaneHeight = height - planeHeight,
+        availPlaneWidth = width - planeWidth,
         newBullet,
         i,
         //capsLock,
@@ -53,34 +53,22 @@ window.addEventListener('load', function() {
         bulletTop = [],
         over = false;
 
-    function checkSize () {
-		width = window.innerWidth;
-		height = window.innerHeight;
+    function checkSize() {
+        width = window.innerWidth;
+        height = window.innerHeight;
         availEnemyWidth = width - enemyWidth;
-        availEnemyHeight =height - enemyHeight;
-		availPlaneHeight = height - planeHeight;
-		availPlaneWidth = width - planeWidth;
+        availEnemyHeight = height - enemyHeight;
+        availPlaneHeight = height - planeHeight;
+        availPlaneWidth = width - planeWidth;
     }
 
     setInterval(function () {
         checkSize();
     }, 1000);
 
-    window.onkeydown = function(e) {
-        return !(e.keyCode == 32 || e.keyCode == 40);
+    window.onkeydown = function (e) {
+        return !(e.keyCode === 32 || e.keyCode === 40);
     };
-
-	document.addEventListener('keydown', function(event) {
-		keyControls(event.keyCode, true);
-	}, false);
-
-	document.addEventListener('keydown', function(window) {
-		keyControls(window.charCode, true);
-	}, false);
-
-    document.addEventListener('keyup', function(event) {
-        keyControls(event.keyCode, false)
-    }, false);
 
     //Move with mouse
 
@@ -95,48 +83,24 @@ window.addEventListener('load', function() {
         checkCaps();
     }, 1000);
 
-	document.addEventListener('mousemove', function(event) {
+    document.addEventListener('mousemove', function(event) {
         startBulletLeft = event.clientX;
         startBulletBottom = height - (event.clientY + planeHeight/2);
-		plane.style.left = event.clientX - planeWidth / 2 + 'px';
-		plane.style.bottom = height - (event.clientY + planeHeight / 2) + 'px';
-	},false);
-	*/
+        plane.style.left = event.clientX - planeWidth / 2 + 'px';
+        plane.style.bottom = height - (event.clientY + planeHeight / 2) + 'px';
+    },false);
+    */
 
-    function keyControls (keyCode, pressed, charCode) {
-        //window.event.preventDefault();
-        if (charCode || keyCode == 38) {
-            movement.top = pressed;
-        }
-
-        if (charCode || keyCode == 40) {
-            movement.bottom = pressed;
-        }
-
-        if (charCode || keyCode == 37) {
-            movement.left = pressed;
-        }
-
-        if (charCode || keyCode == 39) {
-            movement.right = pressed;
-        }
-
-        if (charCode || keyCode == 32) {
-            fire();
-        }
-
-    }
-
-    function fire () {
+    function fire() {
         shots += 0.5;
-        if (shots == Math.floor(shots)  && shots <= bulletsNumber){
+        if (shots === Math.floor(shots)  && shots <= bulletsNumber) {
             existBullets = bulletsNumber - shots;
             newBullet = document.createElement('div');
             newBullet.className = 'bullet';
             body[0].appendChild(newBullet);
             bullet[Math.floor(shots)].style.display = 'block';
             //if (!capsLock) {
-            bulletLeft.push(planeLeft + planeWidth/2);
+            bulletLeft.push(planeLeft + planeWidth / 2);
             bulletTop.push(planeBottom + planeHeight);
             /*} else {
              bulletLeft = startBulletLeft;
@@ -146,40 +110,64 @@ window.addEventListener('load', function() {
         }
 
     }
-	
-	function planeMove() {
-		initialBottom = planeBottom;
-		initialLeft = planeLeft;
-		
-		if (movement.top && planeBottom < availPlaneHeight) {
-			planeBottom += speed;
-		}
-		
-		if (movement.bottom && planeBottom > 0) {
-			planeBottom -= speed;
-		}
-		
-		if (movement.left && planeLeft > 0) {
-			planeLeft -= speed;
-		}
-		
-		if (movement.right && planeLeft < availPlaneWidth) {
-			planeLeft += speed;
-		}
-		
-		if (initialLeft != planeLeft) {
-			plane.style.left = planeLeft + 'px';			
-		}
-		
-		if (initialBottom != planeBottom) {
-			plane.style.bottom = planeBottom + 'px';			
-		}
-	}
 
-    function enemyMove () {
+    function keyControls(keyCode, pressed, charCode) {
+        //window.event.preventDefault();
+        if (charCode || keyCode === 38) {
+            movement.top = pressed;
+        }
 
-        if (enemyTop <= availEnemyHeight){
-            if (enemyLeft <= 0 && lastScore == score) {
+        if (charCode || keyCode === 40) {
+            movement.bottom = pressed;
+        }
+
+        if (charCode || keyCode === 37) {
+            movement.left = pressed;
+        }
+
+        if (charCode || keyCode === 39) {
+            movement.right = pressed;
+        }
+
+        if (charCode || keyCode === 32) {
+            fire();
+        }
+
+    }
+
+    function planeMove() {
+        initialBottom = planeBottom;
+        initialLeft = planeLeft;
+
+        if (movement.top && planeBottom < availPlaneHeight) {
+            planeBottom += speed;
+        }
+
+        if (movement.bottom && planeBottom > 0) {
+            planeBottom -= speed;
+        }
+
+        if (movement.left && planeLeft > 0) {
+            planeLeft -= speed;
+        }
+
+        if (movement.right && planeLeft < availPlaneWidth) {
+            planeLeft += speed;
+        }
+
+        if (initialLeft !== planeLeft) {
+            plane.style.left = planeLeft + 'px';
+        }
+
+        if (initialBottom !== planeBottom) {
+            plane.style.bottom = planeBottom + 'px';
+        }
+    }
+
+    function enemyMove() {
+
+        if (enemyTop <= availEnemyHeight) {
+            if (enemyLeft <= 0 && lastScore === score) {
                 rightMove = true;
                 speed += 1;
             }
@@ -191,10 +179,10 @@ window.addEventListener('load', function() {
                 enemyLeft -= enemySpeed;
                 enemy.style.left = enemyLeft + 'px';
             }
-            if (enemyLeft >= availEnemyWidth || !enemyLeft && !hit) {
+            if ((enemyLeft >= availEnemyWidth || !enemyLeft) && !hit) {
                 enemyTop += enemyHeight;
             }
-                enemy.style.top = enemyTop + 'px'
+            enemy.style.top = enemyTop + 'px';
         } else {
             over = true;
             game.style.display = 'none';
@@ -205,14 +193,14 @@ window.addEventListener('load', function() {
         }
     }
 
-    function bulletMove () {
+    function bulletMove() {
         lastScore = score;
         len = bulletTop.length;
-        for (i = 0 ; i < len; i += 1) {
-            if (bulletTop[i] <= (availEnemyHeight - enemyTop + enemyHeight)
-                    && bulletTop[i] >= (availEnemyHeight - enemyTop )
-                    && bulletLeft[i] >= enemyLeft
-                    && bulletLeft[i] <= (enemyLeft + enemyWidth)) {
+        for (i = 0; i < len; i += 1) {
+            if (bulletTop[i] <= (availEnemyHeight - enemyTop + enemyHeight) &&
+                    bulletTop[i] >= (availEnemyHeight - enemyTop) &&
+                    bulletLeft[i] >= enemyLeft &&
+                    bulletLeft[i] <= (enemyLeft + enemyWidth)) {
                 hit = 1;
                 bullet[i].style.display = 'none';
                 bulletLeft[i] = -1;
@@ -220,7 +208,7 @@ window.addEventListener('load', function() {
                 enemyLeft = 1;
                 enemyTop = 54;
             }
-            if (bulletTop[i] < height && !hit && bulletTop[i] != 0) {
+            if (bulletTop[i] < height && !hit && bulletTop[i] !== 0) {
                 bulletTop[i] = speed + bulletTop[i];
                 bullet[i].style.bottom = bulletTop[i] + 'px';
             }
@@ -233,14 +221,14 @@ window.addEventListener('load', function() {
         }
     }
 
-    function gameResult () {
-        if (existBullets < 1 && score > 70 &&
-            (bulletTop[len-1] >= height - 1 || bulletTop[len-1] == 0)) {
+    function gameResult() {
+        if (existBullets < 1 && score >= 70 &&
+                (bulletTop[len - 1] >= height - 1 || bulletTop[len - 1] === 0)) {
             over = true;
             game.style.display = 'none';
             gameOver.style.display = 'block';
-            gameOver.innerHTML = "<h1>You WIN</h1>"
-        } else if (existBullets < 1 && score < 70 && bulletTop[len-1] >= height - 1){
+            gameOver.innerHTML = "<h1>You WIN</h1>";
+        } else if (existBullets < 1 && score < 70 && bulletTop[len - 1] >= height - 1) {
             over = true;
             game.style.display = 'none';
             gameOver.style.display = 'block';
@@ -249,16 +237,28 @@ window.addEventListener('load', function() {
         }
     }
 
-	function updateState() {
-		planeMove();
+    function updateState() {
+        planeMove();
         enemyMove();
         bulletMove();
         gameResult();
-        if(over) {
+        if (over) {
             return false;
         }
-		requestAnimationFrame(updateState)
-	}
+        requestAnimationFrame(updateState);
+    }
 
-	updateState();
+    document.addEventListener('keydown', function (event) {
+        keyControls(event.keyCode, true);
+    }, false);
+
+    document.addEventListener('keydown', function (window) {
+        keyControls(window.charCode, true);
+    }, false);
+
+    document.addEventListener('keyup', function (event) {
+        keyControls(event.keyCode, false);
+    }, false);
+
+    updateState();
 }, false);
