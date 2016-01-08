@@ -14,6 +14,7 @@ var initialBottom,
     //startBulletBottom,
     shots = -1,
     len,
+    newLenght,
     movement = {
         left: false,
         right: false,
@@ -39,7 +40,7 @@ window.addEventListener('load', function () {
         enemyWidth = 67,
         availEnemyWidth = width - enemyWidth,
         availEnemyHeight = height - enemyHeight,
-        availPlaneHeight = height - planeHeight,
+        availPlaneHeight = height - planeHeight - 50,
         availPlaneWidth = width - planeWidth,
         newBullet,
         i,
@@ -58,7 +59,7 @@ window.addEventListener('load', function () {
         height = window.innerHeight;
         availEnemyWidth = width - enemyWidth;
         availEnemyHeight = height - enemyHeight;
-        availPlaneHeight = height - planeHeight;
+        availPlaneHeight = height - planeHeight - 50;
         availPlaneWidth = width - planeWidth;
     }
 
@@ -102,11 +103,13 @@ window.addEventListener('load', function () {
             //if (!capsLock) {
             bulletLeft.push(planeLeft + planeWidth / 2);
             bulletTop.push(planeBottom + planeHeight);
+            newLenght = bulletTop.length;
             /*} else {
              bulletLeft = startBulletLeft;
              bulletTop = startBulletBottom;
              }*/
             bullet[shots].style.left = bulletLeft[shots] + 'px';
+            bullet[i].style.bottom = bulletTop[i] + 'px';
         }
 
     }
@@ -207,8 +210,7 @@ window.addEventListener('load', function () {
                 bulletTop[i] = 0;
                 enemyLeft = 1;
                 enemyTop = 54;
-            }
-            if (bulletTop[i] < height && !hit && bulletTop[i] !== 0) {
+            } else if (bulletTop[i] <= height && !hit && bulletTop[i] !== 0) {
                 bulletTop[i] = speed + bulletTop[i];
                 bullet[i].style.bottom = bulletTop[i] + 'px';
             }

@@ -18,9 +18,10 @@ body {
 }
 
 #gameOver h1{
-    position: relative;
+    position: absolute;
     top: 50%;
     font-size: 5rem;
+    color: inherit;
 }
 .stage {
     position: absolute;
@@ -89,9 +90,9 @@ body {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 2px;
-    height: 10px;
-    background: #ff0;
+    width: 15px;
+    height: 46px;
+    background: url("../images/bullet.png");
 }
 
 #enemy{
