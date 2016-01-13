@@ -1,0 +1,52 @@
+form{
+    margin: 100px;
+    width: 360px
+}
+
+form > div{
+    padding: 0.3rem;
+}
+
+form > div:last-child{
+    text-align: center;
+}
+
+form > label:first-child {
+    width: 130px;
+    display: inline-block;
+}
+
+.error {
+    color: red;
+}
+
+.error p {
+    padding-left: 154px;
+}
+
+.error input, .error select, .error textarea {
+    border-color: red;
+}
+
+form > span{
+    display: inline-block;
+}
+
+form > span > label{
+    display: block;
+}
+
+#temp{
+    width: 70px;
+}
+
+#result{
+    margin: 20px 0;
+    color: #f00;
+}
+
+.getPost label{
+    display: inline-block;
+    width: 130px;
+    padding: 0.3rem;
+}
