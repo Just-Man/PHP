@@ -56,36 +56,35 @@ $print = 'Username is: ' . $username . '<br>' . 'Password is: ' . $password;
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Task 2</title>
-    <link rel="stylesheet" type="text/css" href="reset.css">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-</head>
-<body>
-<div>
-
-    <form action="" method="post">
-        <div class="<?= getFieldClass($validationErrors, 'username')?>">
-            <label for="username">User Name</label>
-            <input type="text" name="username" id="username" value="<?= htmlentities($username)?>"/>
-            <?= displayErrors($validationErrors, 'username')?>
-        </div>
-        <div class="<?= getFieldClass($validationErrors, 'password')?>">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" />
-            <?= displayErrors($validationErrors, 'password')?>
-        </div>
-        <div class="<?= getFieldClass($validationErrors, 'password')?>">
-            <label for="rePassword">Re Password</label>
-            <input type="password" name="rePassword" id="rePassword" />
-            <?= displayErrors($validationErrors, 'rePassword')?>
-        </div>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="reset.css">
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <title>Task 2</title>
+    </head>
+    <body>
         <div>
-            <button type="submit">Register</button>
+            <form action="" method="post">
+                <div class="<?= getFieldClass($validationErrors, 'username')?>">
+                    <label for="username">User Name</label>
+                    <input type="text" name="username" id="username" value="<?= htmlentities($username)?>"/>
+                    <?= displayErrors($validationErrors, 'username')?>
+                </div>
+                <div class="<?= getFieldClass($validationErrors, 'password')?>">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" />
+                    <?= displayErrors($validationErrors, 'password')?>
+                </div>
+                <div class="<?= getFieldClass($validationErrors, 'password')?>">
+                    <label for="rePassword">Re Password</label>
+                    <input type="password" name="rePassword" id="rePassword" />
+                    <?= displayErrors($validationErrors, 'rePassword')?>
+                </div>
+                <div>
+                    <button type="submit">Register</button>
+                </div>
+            </form>
+            <p><?= $print ?></p>
         </div>
-    </form>
-    <p><?= $print ?></p>
-</div>
-</body>
+    </body>
 </html>
