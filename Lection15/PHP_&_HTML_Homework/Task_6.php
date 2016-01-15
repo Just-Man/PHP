@@ -29,7 +29,7 @@ define('d6',6);
 define('d7',7);
 
 $firstName = $_POST['first_name'];
-$firstName = $_POST['last_name'];
+$lastName = $_POST['last_name'];
 
 $birth_year = $_POST['birthDay'];
 $birth_mount = $_POST['birthDay'];
@@ -48,26 +48,26 @@ $birth_day = $_POST['birthDay'];
 <h1>Add Employee</h1>
 
 <form action="" method="post">
-    <div id="names">
         <span>
             <label for="first-name">First Name:</label>
-            <input type="text" id="first_name" placeholder="John" name="first_name" value="<?= htmlentities("first_name") ?>">
+            <input type="text" id="first_name" placeholder="John" name="first_name" value="<?= htmlentities("$firstName") ?>">
             <label for="first-name">Last Name:</label>
-            <input type="text" id="last_name" placeholder="John" name="last_name" value="<?= htmlentities("last_name") ?>" style="width:8em">
+            <input type="text" id="last_name" placeholder="John" name="last_name" value="<?= htmlentities("$lastName") ?>" ">
         </span>
-    <div id="dates">
         <span>
             <label>Birth date:</label>
             <select name="birthMount">
-                <option selected="selected"> Select </option>
-                <option value="January">January</option>
-                <option value="February">February</option>
-                <option value="March">March</option>
-                <option value="April">April</option>
+                <option value=""> Select </option>
+                <?= options([
+                        JANUARY => 'JANUARY',
+                        FEBRUARY => 'FEBRUARY',
+                        MARCH => 'MARCH',
+                        APRIL => 'APRIL'
+                    ], $birth_mount) ?>
             </select>
 
             <select name="birthDay" id="birthDays">
-                <option selected="selected"> Select </option>
+                <option value=""> Select </option>
                 <?= options([
                     d1 => '1',
                     d2 => '2',
@@ -79,15 +79,15 @@ $birth_day = $_POST['birthDay'];
                 ], $birth_day) ?>
             </select>
 
-            <select name="birthYears" id="birthMount">
-                <option selected="selected"> Select </option>
+            <select name="birthYears" id="">
+                <option  value=""> Select </option>
 
             </select>
         </span>
         <br>
-    <div>
+    <span>
         <button type="submit">Add Employee</button>
-    </div>
+    </span>
 </form>
 </body>
 </html>

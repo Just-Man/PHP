@@ -39,7 +39,9 @@ $numbers = implode(", ",$numbers);
                 <label for="numbers">Numbers</label>
                     <input type="text" id="numbers" name="numbers">
             </span>
+            <span>
             <button type="submit">Enter</button>
+            </span>
             <p id="result">
                 <?php
                 if (!empty($_POST)) {

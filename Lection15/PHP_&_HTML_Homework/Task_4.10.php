@@ -78,7 +78,9 @@ $numbers = implode(", ",$numbers);
                 <label for="number10">Number10</label>
                 <input type="text" id="number10" name="number10">
             </span>
+    <span>
     <button type="submit">Enter</button>
+    </span>
     <p id="result">
         <?php
         if (!empty($_POST)) {

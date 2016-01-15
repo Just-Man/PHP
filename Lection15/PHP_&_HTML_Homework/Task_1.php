@@ -78,17 +78,17 @@ if (!empty($_POST)) {
     </head>
     <body>
         <form name="reg" action="" method="post">
-            <div class="<?= getFieldClass($validationErrors, 'firstNumber')?>">
+            <span class="<?= getFieldClass($validationErrors, 'firstNumber')?>">
                 <label for="number1">First number</label>
                 <input id="number1" name="firstNumber" type="text" value="<?= htmlentities($first)?>">
 				<?= displayErrors($validationErrors, 'firstNumber')?>
-            </div>
-            <div class="<?= getFieldClass($validationErrors, 'secondNumber')?>">
+            </span>
+            <span class="<?= getFieldClass($validationErrors, 'secondNumber')?>">
                 <label for="number2">Second number</label>
                 <input id="number2" name="secondNumber" type="text" value="<?= htmlentities($second)?>">
 				<?= displayErrors($validationErrors, 'secondNumber')?>
-            </div>
-            <div class="<?= getFieldClass($validationErrors, 'mathSing')?>">
+            </span>
+            <span class="<?= getFieldClass($validationErrors, 'mathSing')?>">
                 <label for="sing">Select sing</label><select id="sing" name="mathSing">
                     <option value="">Select</option>
                     <option value="1">+</option>
@@ -97,9 +97,9 @@ if (!empty($_POST)) {
                     <option value="4">*</option>
                 </select>
 				<?= displayErrors($validationErrors, 'mathSing')?>
-            </div>
+            </span>
 
-            <div><button type="submit">Calc</button> </div>
+            <span><button type="submit">Calc</button> </span>
         </form>
     <p><?= $print ?></p>
     </body>
