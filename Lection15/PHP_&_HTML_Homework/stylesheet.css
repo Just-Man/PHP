@@ -28,12 +28,23 @@ form > label:first-child {
     border-color: red;
 }
 
-form > span{
+form span{
+    display: block;
+}
+
+form span > label{
+    display: inline-block;
+    width: 130px;
+    padding: 0.3rem;
+}
+
+#calc_temp > span{
     display: inline-block;
 }
 
-form > span > label{
+#calc_temp > span > label{
     display: block;
+    width: auto;
 }
 
 #temp{
@@ -43,10 +54,4 @@ form > span > label{
 #result{
     margin: 20px 0;
     color: #f00;
-}
-
-div label{
-    display: inline-block;
-    width: 130px;
-    padding: 0.3rem;
 }

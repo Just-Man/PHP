@@ -12,8 +12,6 @@
 какъв тип са тези параметри (int, string, ...).
 */
 
-ini_set('error_reporting', E_ALL | E_STRICT);
-ini_set('display_errors', 'On');
 
 ?>
 
@@ -27,11 +25,11 @@ ini_set('display_errors', 'On');
     </head>
     <body>
         <form name="reg" action="" method="get">
-            <div><label for="f_name">First Name</label><input id="f_name" name="first_name" type="text"></div>
-            <div><label for="l_name">Last Name</label><input id="l_name" name="last_name" type="text"></div>
-            <div><label for="user_name">User name</label><input id="user_name" name="user_name" type="text"></div>
-            <div><label for="pass">Password</label><input id="pass" name="pass" type="password"></div>
-            <div><label for="send"><button id="send" type="submit">Send</button></label></div>
+            <span><label for="f_name">First Name</label><input id="f_name" name="first_name" type="text"></span>
+            <span><label for="l_name">Last Name</label><input id="l_name" name="last_name" type="text"></span>
+            <span><label for="user_name">User name</label><input id="user_name" name="user_name" type="text"></span>
+            <span><label for="pass">Password</label><input id="pass" name="pass" type="password"></span>
+            <span><label for="send"><button id="send" type="submit">Send</button></label></span>
         </form>
     <table>
         <tr><td>Variables</td><td>Type of variables</td></tr>

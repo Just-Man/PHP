@@ -59,10 +59,10 @@ function options ($data, $selected) {
     $html = '';
     foreach ($data as $key => $value) {
         $html .= sprintf(
-            '<option value = "%s">%s</option>',
+            '<option value = "%s" %s>%s</option>',
         $key,
         $key == $selected ? 'selected ="selected"' : '',
-            $value
+        $value
         );
     }
     return $html;

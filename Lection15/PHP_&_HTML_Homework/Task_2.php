@@ -6,24 +6,24 @@
  * Time: 10:04
  */
 
-ini_set('error_reporting', E_ALL | E_STRICT);
-ini_set('display_errors', 'On');
+require_once '../../php_errors.php';
+
 	require_once 'My_library.php';
 
 	$validationErrors = [];
 	$username = getValue($_POST, 'username');
 	$password = getValue($_POST, 'password');
     $rePassword = getValue($_POST, 'rePassword');
-    $test = null;
+    $print = '';
 
-	function validateForm() {
+	function validateForm(&$errors) {
         global $username, $password, $rePassword;
 
         $errors = [];
 
-        if (!validateRequired($username)[0]) {
+        if (!validateRequired($username)) {
             $errors['username'][] = 'User Name is required';
-        } else if(!validateLongerOrEqualString($username, 4)) {
+        } else if(!validateLen($username, 4)) {
             $errors['username'][] = 'User Name must be at least 4 characters long';
         }
 
@@ -46,12 +46,14 @@ ini_set('display_errors', 'On');
         return empty($errors);
     }
 	if (!empty($_POST)) {
-        validateForm();
+        validateForm($validationErrors);
+        if (validateForm($validationErrors)) {
+            $password = md5($password);
+            $print = 'Username is: ' . $username . '<br>' . 'Password is: ' . $password;
+        }
 
     }
 
-$password = md5($password);
-$print = 'Username is: ' . $username . '<br>' . 'Password is: ' . $password;
 
 ?>
 <!DOCTYPE html>
@@ -65,24 +67,24 @@ $print = 'Username is: ' . $username . '<br>' . 'Password is: ' . $password;
     <body>
         <div>
             <form action="" method="post">
-                <div class="<?= getFieldClass($validationErrors, 'username')?>">
+                <span class="<?= getFieldClass($validationErrors, 'username')?>">
                     <label for="username">User Name</label>
                     <input type="text" name="username" id="username" value="<?= htmlentities($username)?>"/>
                     <?= displayErrors($validationErrors, 'username')?>
-                </div>
-                <div class="<?= getFieldClass($validationErrors, 'password')?>">
+                </span>
+                <span class="<?= getFieldClass($validationErrors, 'password')?>">
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password" />
                     <?= displayErrors($validationErrors, 'password')?>
-                </div>
-                <div class="<?= getFieldClass($validationErrors, 'password')?>">
+                </span>
+                <span class="<?= getFieldClass($validationErrors, 'password')?>">
                     <label for="rePassword">Re Password</label>
                     <input type="password" name="rePassword" id="rePassword" />
                     <?= displayErrors($validationErrors, 'rePassword')?>
-                </div>
-                <div>
+                </span>
+                <span>
                     <button type="submit">Register</button>
-                </div>
+                </span>
             </form>
             <p><?= $print ?></p>
         </div>

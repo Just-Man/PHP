@@ -37,7 +37,7 @@ if ($scale_from === $scale_to) {
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
     </head>
     <body>
-        <form action="" method="post">
+        <form action="" method="post" id="calc_temp">
             <span>
                 <label for="temp">Temp.</label>
                     <input type="text" id="temp" name="temp">
