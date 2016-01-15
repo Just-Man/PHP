@@ -2,16 +2,16 @@
 /**
  * Created by PhpStorm.
  * User: just
- * Date: 14.01.16
- * Time: 06:01
+ * Date: 15.01.16
+ * Time: 08:09
  */
 /*
-Задача 6:
-Създайте HTML страница с PHP скрипт, в който потребителя трябва да
-въведе име, фамилия и да избере дата на раждане (ден, месец,
-година). Ако потребителя не е въвел някое поле, нека въведената от
-него стойност да се запази във формата.
+Задача 8:
+Създайте HTML страница с PHP скрипт, в който съдържа HTML форма и
+показва на екрана колко пъти тази форма е била изпратена на
+сървъра
 */
+session_start();
 
 require_once "My_library.php";
 
@@ -39,14 +39,14 @@ define('d5',5);
 define('d6',6);
 define('d7',7);
 
-    $firstName = getValue($_POST,'first_name');
-    $lastName = getValue($_POST,'last_name');
+$firstName = getValue($_POST,'first_name');
+$lastName = getValue($_POST,'last_name');
 
-    $birth_year = getValue($_POST,'birthYear');
-    $birth_mount = getValue($_POST,'birthMount');
-    $birth_day = getValue($_POST,'birthDay');
+$birth_year = getValue($_POST,'birthYear');
+$birth_mount = getValue($_POST,'birthMount');
+$birth_day = getValue($_POST,'birthDay');
 
-	$validationErrors = [];
+$validationErrors = [];
 function validateForm(&$errors)
 {
     global $firstName, $lastName, $birth_day, $birth_mount, $birth_year;
@@ -76,19 +76,31 @@ function validateForm(&$errors)
 
     return empty($errors);
 }
+function counter() {
+    if (!isset($_SESSION['counter'])) {
+        $_SESSION['counter'] = 0;
+    } else {
+        $_SESSION['counter'] += 1;
+    }
+    return $_SESSION['counter'];
+}
 
 if (!empty($_POST)) {
     validateForm($validationErrors);
+    $result = 'Number of submit is: ' . counter();
+} else {
+    $result = '';
 }
+
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="reset.css">
-        <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <title>Task 6</title>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <title>Task 8</title>
 </head>
 <body>
 
@@ -96,12 +108,12 @@ if (!empty($_POST)) {
         <span class="<?= getFieldClass($validationErrors, 'first_name')?>">
             <label for="first-name">First Name:</label>
             <input type="text" id="first_name" placeholder="John" name="first_name" value="<?= htmlentities("$firstName") ?>">
-				<?= displayErrors($validationErrors, 'first_name')?>
+            <?= displayErrors($validationErrors, 'first_name')?>
         </span>
         <span class="<?= getFieldClass($validationErrors, 'last_name')?>">
             <label for="first-name">Last Name:</label>
             <input type="text" id="last_name" placeholder="John" name="last_name" value="<?= htmlentities("$lastName") ?>" ">
-				<?= displayErrors($validationErrors, 'last_name')?>
+            <?= displayErrors($validationErrors, 'last_name')?>
         </span>
     <span class="select">
             <label>Birth date:</label>
@@ -109,11 +121,11 @@ if (!empty($_POST)) {
             <select name="birthMount">
                 <option value=""> Select </option>
                 <?= options([
-                        JANUARY => 'JANUARY',
-                        FEBRUARY => 'FEBRUARY',
-                        MARCH => 'MARCH',
-                        APRIL => 'APRIL'
-                    ], $birth_mount) ?>
+                    JANUARY => 'JANUARY',
+                    FEBRUARY => 'FEBRUARY',
+                    MARCH => 'MARCH',
+                    APRIL => 'APRIL'
+                ], $birth_mount) ?>
             </select>
         </span>
         <span class="<?= getFieldClass($validationErrors, 'birthDay')?>">
@@ -148,10 +160,12 @@ if (!empty($_POST)) {
             </select>
         </span>
     </span>
-        <br>
+    <br>
     <span>
         <button type="submit">Add Employee</button>
     </span>
 </form>
+
+<p> <?= $result; ?></p>
 </body>
 </html>
