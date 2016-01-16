@@ -37,6 +37,7 @@ $words = [
     'Лозница', 'Бяла', 'Борово', 'Черноморец', 'Батановци', 'Пордим', 'Ахелой', 'Сухиндол', 'Българово', 'Брезово', 'Главиница', 'Каолиново', 'Чипровци', 'Меричлери', 'Земен', 'Плачковци',
     'Кермен', 'Алфатар', 'Грамада', 'Сеново', 'Бойчиновци', 'Антоново', 'Ахтопол', 'Бобошево', 'Шипка', 'Болярово', 'Димово', 'Брусарци', 'Китен', 'Клисура', 'Плиска', 'Маджарово', 'Мелник'
 ];
+$end = '';
 $usedStr = '';
 $class = null;
 
@@ -73,7 +74,7 @@ if (!empty($_POST)) {
     $changed [] = mb_substr($_SESSION['word'], $_SESSION['wordLen'], 1);
     $_SESSION['current'] = implode($changed);
 
-    $_SESSION['used'] = $_SESSION['used'] . ' ' . $inputChar;
+    $_SESSION['used'] = $_SESSION['used'] . ', ' . $inputChar;
     $usedStr = $_SESSION['used'];
 }
 if (!$find) {
@@ -81,20 +82,22 @@ if (!$find) {
     $_SESSION['count'] = $counter;
 }
 
+$showWord = preg_split('/(?<!^)(?!$)/u',$_SESSION['current']);
+$showWord = implode(' ', $showWord);
+
 if ($_SESSION['current'] == $_SESSION['word']) {
-    $_SESSION['current'] = 'You win! Word is  '. $_SESSION['word'];
+    $showWord = $_SESSION['current'];
+    $end = 'You win! Word is  ';
     $_SESSION['word'] = null;
     $class = 'class="hidden"';
 }
 
 
 if ($counter >= $_SESSION['wordLen']) {
-    $_SESSION['current'] = 'You lose. Word is  '. $_SESSION['word'];
+    $showWord = $_SESSION['current'];
+    $end = 'You lose. Word is  ';
     $_SESSION['word'] = null;
 }
-
-$showWord = preg_split('/(?<!^)(?!$)/u',$_SESSION['current']);
-$showWord = implode(' ', $showWord);
 ?>
 <!DOCTYPE html>
 <html>
@@ -107,7 +110,7 @@ $showWord = implode(' ', $showWord);
     <body>
         <div id="word">
             <p <?= $class ?> >Въведените букви трябва задължително да са на кирилица</p>
-            <p> <?= $showWord ?></p>
+            <p> <?= $end . $showWord ?></p>
             <p <?= $class ?> >Използвани букви: <?= $usedStr ?></p>
         </div>
         <form action="" method="post" <?= $class ?> id="hangMan">
