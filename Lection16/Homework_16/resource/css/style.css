@@ -1,0 +1,23 @@
+ul{
+    list-style-type: none;
+}
+
+li{
+    display: inline-block;
+    width: 120px;
+    height: 150px;
+    padding: 10px;
+    text-align: center;
+}
+
+li img{
+    display: block;
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+li a{
+    text-decoration: none;
+    color: inherit;
+}
