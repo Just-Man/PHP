@@ -1,0 +1,40 @@
+section{
+    /*display: inline-block;*/
+    margin: 20px;
+    width: 558px;
+    height: 338px;
+    background: #F7F2EC;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+#flag{
+    display: inline-block;
+    width: 68px;
+}
+
+#top{
+    display: inline-block;
+    width: 486px;
+    background: url("../img/top_background.jpg");
+}
+
+ul{
+    display: inline-block;
+    list-style-type: none;
+}
+
+#right_top {
+    float: right;
+    text-align: right;
+}
+
+#mainPhoto{
+    margin-top: 20px;
+    margin-right: 20px;
+    width: 165px;
+    height: 200px;
+    opacity: 0.5;
+}
