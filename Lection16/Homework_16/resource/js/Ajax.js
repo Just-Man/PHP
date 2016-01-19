@@ -77,6 +77,13 @@ var Ajax = {
             return result.join('&');
         }
     };
+
+function getItemId(event) {
+    var itemId = this.id,
+        params = {key: itemId};
+    event.preventDefault();
+    return params;
+}
 function display(container, data) {
     var list = document.createElement('ul'),
         i,
@@ -91,7 +98,9 @@ function display(container, data) {
         item = data[i];
         image.src = item.pic;
         a.innerHTML = item.username;
-        a.href = i;
+        a.href = item.username;
+        a.id = i;
+        a.onclick = getItemId;
         a.appendChild(image);
         li.appendChild(a);
         list.appendChild(li);
@@ -104,4 +113,4 @@ var callback = function (xhr) {
     display(document.getElementById('result'), item);
 };
 
-Ajax.makeRequest('GET', 'resource/php/server.php', {}, true, callback);
+Ajax.makeRequest('GET', 'resource/php/server.php', getItemId(), true, callback);
