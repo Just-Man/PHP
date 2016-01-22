@@ -33,7 +33,7 @@ var Ajax = {
             }
 
             if (async) {
-                xhr.onreadystatechange = function() {
+                xhr.onreadystatechange = function () {
                     if (xhr.readyState === 4) {
                         callback(xhr);
                     }
@@ -77,40 +77,3 @@ var Ajax = {
             return result.join('&');
         }
     };
-
-function getItemId(event) {
-    var itemId = this.id,
-        params = {key: itemId};
-    event.preventDefault();
-    return params;
-}
-function display(container, data) {
-    var list = document.createElement('ul'),
-        i,
-        li,
-        a,
-        image,
-        item;
-    for (i = 0; i < data.length; i += 1) {
-        a  = document.createElement('a');
-        image = document.createElement('img');
-        li  = document.createElement('li');
-        item = data[i];
-        image.src = item.pic;
-        a.innerHTML = item.username;
-        a.href = item.username;
-        a.id = i;
-        a.onclick = getItemId;
-        a.appendChild(image);
-        li.appendChild(a);
-        list.appendChild(li);
-    }
-    container.appendChild(list);
-}
-var callback = function (xhr) {
-    var item = JSON.parse(xhr.responseText);
-    document.getElementById('result').innerHTML = '';
-    display(document.getElementById('result'), item);
-};
-
-Ajax.makeRequest('GET', 'resource/php/server.php', getItemId(), true, callback);

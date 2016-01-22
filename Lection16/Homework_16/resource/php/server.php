@@ -8,3 +8,4 @@
 
 $people = require_once "DB.php";
 echo json_encode($people);
+
