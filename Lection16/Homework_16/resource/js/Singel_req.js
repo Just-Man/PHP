@@ -3,19 +3,9 @@
  */
 var itemId;
 
-var callback = function (xhr) {
-    var item = JSON.parse(xhr.responseText);
-    document.getElementById('result').innerHTML = '';
-    display(document.getElementById('result'), item);
-};
-
-function callbackSingle(xhr) {
-    var item = JSON.parse(xhr.responseText);
-    displaySingle(document.getElementById(itemId), item);
-}
-
 function displaySingle(container, data) {
-    var item = data[0],
+    sessionStorage.setItem("Person", JSON.stringify(data[0]));
+    var item = JSON.parse(sessionStorage.getItem("Person")),
         list = document.getElementById('more'),
         li,
         val;
@@ -29,6 +19,15 @@ function displaySingle(container, data) {
         list.appendChild(li);
     }
     container.appendChild(list);
+    setTimeout(function () {
+        list.innerHTML = '';
+        sessionStorage.removeItem("Person");
+    }, 30000);
+}
+
+function callbackSingle(xhr) {
+    var item = JSON.parse(xhr.responseText);
+    displaySingle(document.getElementById(itemId), item);
 }
 
 function getItemId(event) {
@@ -65,5 +64,11 @@ function display(container, data) {
     }
     container.appendChild(list);
 }
+
+var callback = function (xhr) {
+    var item = JSON.parse(xhr.responseText);
+    document.getElementById('result').innerHTML = '';
+    display(document.getElementById('result'), item);
+};
 
 Ajax.makeRequest('GET', 'resource/php/server.php', {}, true, callback);
