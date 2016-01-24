@@ -8,6 +8,8 @@
     <title>Player</title>
 </head>
 <body>
-<p id="result"></p>
+<p id="result">
+    <ul id="more"></ul>
+</p>
 </body>
 </html>

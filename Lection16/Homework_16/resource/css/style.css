@@ -3,6 +3,8 @@ ul{
 }
 
 li{
+    position: absolute;
+    top: 0;
     display: inline-block;
     width: 120px;
     height: 150px;
@@ -20,4 +22,14 @@ li img{
 li a{
     text-decoration: none;
     color: inherit;
+}
+
+#more{
+    margin: 0;
+    padding: 0;
+}
+
+#more > li{
+    height: auto;
+    position: relative;
 }
