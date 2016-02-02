@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../../jquery-2.2.0.min.js"></script>
+    <title>Jquery</title>
+</head>
+<body>
+<script>
+    function createNon () {
+    console.log($('#content').append('<p class="non-existing">tet 1</p>'))
+}
+    (function($){
+       /* $(document).ready(function(){console.log(Date.now())});
+        $(function(){console.log(Date.now())});
+
+        $.each({'name' : 'test'}, function () {
+            console.log(this);
+        });
+
+//$.fn.nameOfTheFunction;
+
+        $('*').each(function (i, val) {
+            console.log(val);
+        });
+$(function() {*/
+    /*var fAttr = $('div').attr('data-value');
+    $('div:even(1)').attr('test', 123);
+    console.log(fAttr);
+});
+        console.log($('div').html('<p>test</p>')
+                .find('p')
+                .css('border', '1px solid #0f0')
+                .end()
+                .attr('text' , '321'));
+
+        console.log($('<p>tet 1</p>').appendTo('#content'));
+        console.log($('#content').append($('<p>tet 1</p>')));*/
+
+        $('#drawButton')
+                .addClass('btn')
+                .on('click', function () {
+                   createNon();
+                });
+
+        $('#delButton')
+                .on('click', function () {
+                   $('#content p:last-child').remove();
+                });
+
+        $('#remove')
+                .on('click', function () {
+                   $('#content p').empty();
+                });
+        $('#content').delegate('.non-existing', 'click', function () {
+            $(this).css({
+                'color': '#0f0',
+                'background-color' : '#000'
+            })
+        })
+        $('#ajax').on('click', function () {
+            $.ajax({
+                'url' : 'server.php',
+                'method' : 'GET',
+                'dataType' : 'json'
+            }).done(function (data) {
+                console.log(data);
+            })
+        })
+
+    }) (jQuery);
+
+</script>
+<main id="content">
+    <button type="button" id="drawButton">Draw</button>
+    <button type="button" id="delButton">Delete</button>
+    <button type="button" id="remove">Delete</button>
+    <button type="button" id="ajax">Delete</button>
+</main>
+</body>
+</html>
