@@ -24,6 +24,18 @@
         }
     ];
 
+    function printData() {
+        "use strict";
+        if (!data.length) {
+            $('#tableContent')
+                .append('<tr>' +
+                    '   <td colspan="5" id="noData">No data</td>' +
+                    '</tr>');
+            return;
+        }
+        data.forEach(singleCarTable);
+    }
+
     function edit(event) {
         $('#tableContent').empty();
         $('table').toggle();
@@ -40,47 +52,67 @@
         createForm(currentCar);
     }
 
-    function remove(event) {
-        "use strict";
-        $('#tableContent').empty();
-        var id = event.currentTarget.id.match(/\d+/),
-        confirms = confirm('do you really wont to delete');
-        if (confirms) {
-            data.splice(id, 1);
-        }
-        printData();
-    }
-
     function addData(event) {
         var keysNames = Object.keys(data[0]),
             newCar = {},
             inputs = $('.carData'),
             len = inputs.length,
             i,
-            id = $('#carId')[0] ? $('#carId')[0].value : "";
-        console.log(inputs);
+            id = $('#carId')[0] ? $('#carId')[0].value : "",
+            errors = [],
+            p = $('.error');
         for (i = 0; i < len; i += 1) {
+            p[i].style.display = 'none';
+            if (inputs[i].value < 2) {
+                errors[i] = 'field is required<br>';
+            }
+            if (i === 2 || i === 3) {
+                if (!(Math.floor(inputs[i].value) === inputs[i].value)) {
+                    if (errors[i] !== undefined) {
+                        errors[i] += 'number must be integer';
+                    } else {
+                        errors[i] = 'number must be integer';
+                    }
+                }
+            }
             newCar[keysNames[i]] = inputs[i].value;
         }
-        if (id) {
-            data[id] = newCar;
+        if (!errors.length) {
+            if (id) {
+                data[id] = newCar;
+            } else {
+                data.push(newCar);
+            }
+            $('#addForm').toggle();
+            $('table').toggle();
+            event.preventDefault();
+            printData();
         } else {
-            data.push(newCar);
+            for (i in errors) {
+                p[i].style.display = 'block';
+                p[i].innerHTML = errors[i];
+            }
+            return false;
         }
-        $('#addForm').toggle();
-        $('table').toggle();
-        event.preventDefault();
-        printData();
+    }
 
+    function remove(event) {
+        "use strict";
+        $('#tableContent').empty();
+        var id = event.currentTarget.id.match(/\d+/),
+            confirms = window.confirm('do you really wont to delete');
+        if (confirms) {
+            data.splice(id, 1);
+        }
+        printData();
     }
 
     function singleCarTable(car, index) {
         var val;
         $('<tr></tr>').appendTo('#tableContent').attr('id', index)
             .append('<td>' +
-                    (index + 1) +
+                (index + 1) +
                 '</td>');
-
         for (val in car) {
             $('#tableContent tr:last-child')
                 .append('<td>' + car[val] + '</td>');
@@ -102,48 +134,46 @@
         var elements = Object.keys(data[0]),
             len = elements.length,
             i,
+            form = $('#addForm'),
             item;
 
-        $('#addForm').empty();
+        form.empty();
         if (!($.isEmptyObject(currentCar))) {
             for (item in currentCar) {
                 if (item === 'id') {
-                    $('#addForm')
+                    form
                         .append('<label for="id"></label>' +
                             '       <input type="hidden" id="carId" value="' + currentCar[item] + '">');
                 } else {
-                    $('#addForm')
+                    form
                         .append('<label for="' + item + '">' + item + '   </label>' +
-                            '       <input type="text" id="' + item + '" class="carData" value="' + currentCar[item] + '">');
+                            '<input type="text" id="' + item + '" class="carData" value="' + currentCar[item] + '">' +
+                            '<br>' +
+                            '<p class="error"></p> ');
                 }
             }
         } else {
             for (i = 0; i < len; i += 1) {
-                $('#addForm')
+                form
                     .append('<label for="' + i + '">' + elements[i] + '</label>')
-                    .append('<input type="text" id="' + i + '" class="carData" ><br>');
+                    .append('<input type="text" id="' + i + '" class="carData" >' +
+                        '<br>' +
+                        '<p class="error"></p>');
             }
         }
-        console.log('test');
-        $('#addForm')
-            .append('<button type="submit" id="submit">Add</button>')
-            .on('submit', addData);
-    }
-
-    function printData() {
-        "use strict";
-        if (!data.length) {
-            $('#tableContent')
-                .append('<tr>' +
-                    '   <td colspan="5" id="noData">No data</td>' +
-                    '</tr>');
-            return;
-        }
-        data.forEach(singleCarTable);
+        form
+            .append('<button type="submit" id="submit">Add</button>');
     }
 
     $(function () {
         printData();
+        $('#list').on('click', function () {
+            "use strict";
+            $('#addForm').hide();
+            $('table').show();
+            printData();
+        });
         $('#addBtn').on('click', edit);
+        $('#addForm').on('submit', addData);
     });
 }(jQuery));
