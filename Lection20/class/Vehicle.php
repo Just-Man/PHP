@@ -10,6 +10,11 @@ class Vehicle
 {
     private $description;
 
+    public function __construct()
+    {
+
+    }
+
     /**
      * @return mixed
      */
@@ -24,5 +29,11 @@ class Vehicle
     public function setDescription($description)
     {
         $this->description = $description;
+    }
+
+    public function __destruct()
+    {
+        // TODO: Implement __destruct() method.
+        echo 'Destructor called';
     }
 }
