@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>jQuery Homework</title>
+        <link rel="stylesheet" href="resource/css/reset.css">
         <link rel="stylesheet" href="resource/css/font-awesome.min.css">
         <link rel="stylesheet" href="resource/css/stylesheet.css">
         <script type="text/javascript" src="../../jquery-2.2.0.min.js"></script>
@@ -13,8 +14,16 @@
             <header>
                 <nav>
                     <ul>
-                        <li>List</li>
-                        <li><button type="button" id="addBtn"> Add</button></li>
+                        <li>
+                            <button id="list" class="btn">
+                                <i class="fa fa-list-alt fa-2x"></i>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" id="addBtn" class="btn">
+                                <i class="fa fa-plus-square-o fa-2x"></i>
+                            </button>
+                        </li>
                     </ul>
                 </nav>
             </header>
@@ -32,7 +41,8 @@
                     </thead>
                     <tbody id="tableContent"></tbody>
                 </table>
-                <form action="" id="addForm"></form>
+                <form action="" id="addForm">
+                </form>
             </section>
         </main>
     </body>
