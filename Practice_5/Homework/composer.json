@@ -1,0 +1,28 @@
+{
+  "name": "just/WEB_AP_homework",
+  "description": "WEB_AP_homework",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "just",
+      "email": "g.staikov85@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/bashibozuk/HttpStub"
+    }
+  ],
+  "require": {
+    "bashibozuk/httpstub": "master",
+    "twbs/bootstrap": "3.3.x-dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "HttpStub\\": "bashibozuk/httpstub"
+    }
+  }
+}
