@@ -18,9 +18,10 @@ PHP –
 */
 
 session_start();
+require_once 'My_library.php';
 
-$inputChar = $_POST['input'];
-$reset = $_POST['reset'];
+$inputChar = getValue($_POST, 'input');
+$reset = getValue($_POST, 'reset');
 $words = [
     'София', 'Пловдив', 'Варна', 'Бургас', 'Русе', 'Плевен', 'Добрич', 'Сливен', 'Шумен', 'Перник', 'Пазарджик', 'Ямбол', 'Хасково', 'Благоевград', 'Враца', 'Габрово', 'Асеновград',
     'Видин', 'Казанлък', 'Кърджали', 'Кюстендил', 'Монтана', 'Търговище', 'Димитровград', 'Силистра', 'Ловеч', 'Дупница', 'Разград', 'Свищов', 'Петрич', 'Смолян', 'Сандански',
@@ -40,6 +41,7 @@ $words = [
 $end = '';
 $usedStr = '';
 $class = null;
+$find = null;
 
 if (!isset($_SESSION['word']) || $reset){
     $rand = rand(0, count($words) - 1);
@@ -94,7 +96,7 @@ if ($_SESSION['current'] == $_SESSION['word']) {
 
 
 if ($counter >= $_SESSION['wordLen']) {
-    $showWord = $_SESSION['current'];
+    $showWord = $_SESSION['word'];
     $end = 'You lose. Word is  ';
     $_SESSION['word'] = null;
 }

@@ -14,18 +14,21 @@
 */
 
 require_once "My_library.php";
-//785679185644
-foreach ($_POST as $item) {
-    $digits[] = $item;
+
+if (!empty($_POST)) {
+    foreach ($_POST as $item) {
+        $digits[] = $item;
+    }
+    $digits = implode(',', $digits);
+    var_dump($digits);
+    $numbers = numberFromString($digits)[0];
+    sort($numbers);
+    $len = count($numbers) - 1;
+    $min = $numbers[0];
+    $max = $numbers[$len];
+    $numbers = implode(", ", $numbers);
 }
-$digits = implode(',',$digits);
-//$digits = getValue($_POST, 'numbers');
-$numbers = numberFromString($digits)[0];
-sort($numbers);
-$len = count($numbers) - 1;
-$min = $numbers[0];
-$max = $numbers[$len];
-$numbers = implode(", ",$numbers);
+
 
 ?>
 <!DOCTYPE html>

@@ -17,12 +17,16 @@ require_once "My_library.php";
 //785679185644
 
 $digits = getValue($_POST, 'numbers');
-$numbers = numberFromString($digits)[0];
-sort($numbers);
-$len = count($numbers) - 1;
-$min = $numbers[0];
-$max = $numbers[$len];
-$numbers = implode(", ",$numbers);
+if ($digits) {
+    $numbers = numberFromString($digits)[0];
+    sort($numbers);
+    $len = count($numbers) - 1;
+    $min = $numbers[0];
+    $max = $numbers[$len];
+    $numbers = implode(", ", $numbers);
+}
+
+
 
 ?>
 <!DOCTYPE html>

@@ -34,6 +34,13 @@ define('d5',5);
 define('d6',6);
 define('d7',7);
 
+
+$methods = ['$_GET', '$_POST'];
+$method = null;
+$printMethod = null;
+$result = '';
+$results = '';
+
 $firstName = getValue($method,'first_name');
 $lastName = getValue($method,'last_name');
 
@@ -42,7 +49,6 @@ $birth_mount = getValue($method,'birthMount');
 $birth_day = getValue($method,'birthDay');
 
 $validationErrors = [];
-$methods = ['$_GET', '$_POST'];
 
 function counter() {
     if (!isset($_SESSION['counter'])) {
