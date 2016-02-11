@@ -10,9 +10,6 @@ require_once __DIR__ . "/config.php";
 
 \HttpStub\Settings::set(\HttpStub\Settings::PATH, __DIR__ . "/.data");
 
-$users = new \HttpStub\Storage\FileStorage('users');
-
-
 require_once 'views/header.php';
 require_once __DIR__ . "/views/" . PHP_SELF;
 require_once 'views/footer.php';

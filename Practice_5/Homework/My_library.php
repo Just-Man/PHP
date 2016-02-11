@@ -108,3 +108,19 @@ function validateLongerOrEqualString($value, $length)
 {
     return mb_strlen(strval($value), 'UTF-8') >= $length;
 }
+
+function numberFromString($value)
+{
+    preg_match_all('!\d+!', $value, $matches);
+    return $matches;
+}
+
+function confirmPassword($field1, $field2)
+{
+    if (md5($field1) === md5($field2)) {
+        return md5($field2);
+    } else {
+        return false;
+    }
+}
+

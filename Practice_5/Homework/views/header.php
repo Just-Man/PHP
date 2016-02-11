@@ -1,10 +1,15 @@
-<!--/**
+<?php
+
+/**
  * Created by PhpStorm.
  * User: just
  * Date: 04.02.16
  * Time: 09:37
- */-->
-<?php
+ */
+
+session_start();
+
+require_once '../../php_errors.php';
 
 $articles = new \HttpStub\Storage\FileStorage('articles');
 
@@ -13,6 +18,7 @@ $article = $articles->readAll();
 $categories = new \HttpStub\Storage\FileStorage('category');
 
 $category = $categories->readAll();
+
 
 
 function printData($data, $category = null, $reversed = false)
@@ -45,7 +51,6 @@ function printData($data, $category = null, $reversed = false)
         }
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -83,8 +88,10 @@ function printData($data, $category = null, $reversed = false)
                             <?php printData($category) ?>
                         </ul>
                     </li>
-                    <li <?php if (PHP_SELF == 'addArticle.php') : ?> class="active" <?php endif; ?>><a
-                            href="addArticle.php">Add Article</a></li>
+                    <li class="hide <?php if (PHP_SELF == 'addArticle.php') : ?> active <?php endif; ?><?php if ($_SESSION['logged']) {
+                        echo 'show';
+                    } ?>"><a
+                            href="addArticle.php" id="addArticle">Add Article</a></li>
                 </ul>
                 <!--<form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
@@ -93,7 +100,12 @@ function printData($data, $category = null, $reversed = false)
                     <button type="submit" class="btn btn-default">Submit</button>
                 </form>-->
             </div><!-- /.navbar-collapse -->
-            <a class="btn btn-default navbar-btn navbar-right" href="sing.php">Sign in</a>
+            <p id="welcome"
+               class="navbar-brand navbar-right hide <?php if ($_SESSION['logged']): ?>show <?php endif; ?>"><span>Welcome </span><?= getValue($_SESSION, 'username') ?>
+            </p>
+            <a class="btn btn-default navbar-btn navbar-right <?php if (getValue($_SESSION, 'logged')) {
+                echo 'hide';
+            } ?>" href="sing.php">Sign in</a>
         </div><!-- /.container-fluid -->
     </nav>
     <div id="content">

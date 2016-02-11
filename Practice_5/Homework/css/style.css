@@ -1,59 +1,70 @@
 main {
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    border-radius: 25px;
-    background: #ddd;
-    margin: 2% auto;
-    padding: 30px;
-    width: 90%;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  background: #ddd;
+  margin: 2% auto;
+  padding: 30px;
+  width: 90%;
+}
+
+#welcome {
+  display: inline;
+  margin-bottom: 0;
+  padding: 15px 20px;
+  text-align: center;
 }
 
 #content {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 section {
-    background: #fcfcfc;
-    padding: 10px;
-    width: 80%;
+  background: #fcfcfc;
+  padding: 10px;
+  width: 80%;
 }
 
 aside {
-    background: #fcfcfc;
-    padding: 10px;
-    width: 20%;
+  background: #fcfcfc;
+  padding: 10px;
+  width: 20%;
 }
 
 a.btn {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 #article {
-    height: 400px;
+  height: 400px;
 }
 
 div.mce-edit-area {
-    height: 400px;
+  height: 400px;
 }
 
 #selectCategory {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 #selectCategory a {
-    margin: 0;
+  margin: 0;
 }
 
 #articlePreview {
-    height: 100px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #articleView #articlePreview {
-    height: auto;
+  height: auto;
+}
+
+.errors {
+  color: #f00;
 }
 
 /*# sourceMappingURL=style.css.map */

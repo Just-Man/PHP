@@ -15,6 +15,13 @@ main {
   width: 90%;
 }
 
+#welcome {
+  display: inline;
+  margin-bottom: 0;
+  padding: 15px 20px;
+  text-align: center;
+}
+
 #content {
   display: flex;
   justify-content: space-between;
@@ -60,5 +67,9 @@ div.mce-edit-area {
 
 #articleView #articlePreview {
   height: auto;
+}
+
+.errors {
+  color: #f00;
 }
 
