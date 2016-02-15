@@ -1,0 +1,16 @@
+{
+  "name": "Just/date&time",
+  "description": "date, time & regex",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Just",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    "twbs/bootstrap": "3.3.x-dev",
+    "components/jquery": "2.2.0"
+  }
+}

@@ -1,0 +1,76 @@
+main {
+  margin: 5% auto;
+  text-align: center;
+  width: 80%;
+}
+
+.form-control {
+  display: inline-block;
+  width: 65%;
+}
+
+#checkDate {
+  text-align: center;
+  width: 300px;
+
+  label {
+    text-align: left;
+    width: 80px;
+  }
+}
+
+.errors {
+  color: #f00;
+  text-align: center;
+}
+
+form {
+  display: inline-block;
+  text-align: center;
+
+  fieldset {
+    float: left;
+    margin: 0 5px;
+    width: 49%;
+
+    label {
+      text-align: left;
+      width: 160px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+#format {
+  margin-left: 20px;
+}
+
+#formatField {
+  display: block;
+  margin: 10px auto;
+  width: 100%;
+}
+
+#result li {
+  border: 1px solid #fcfcfc;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 5px;
+  padding: 2px;
+  text-align: left;
+  width: 100px;
+}
+
+#mails li {
+  border: 1px solid #fcfcfc;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 5px;
+  padding: 2px;
+  text-align: left;
+  width: 350px;
+}
