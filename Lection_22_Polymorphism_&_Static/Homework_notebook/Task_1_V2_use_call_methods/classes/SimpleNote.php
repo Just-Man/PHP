@@ -6,7 +6,7 @@
  * Date: 25.02.16
  * Time: 05:26
  */
-class Note
+class SimpleNote
 {
     protected $page;
 

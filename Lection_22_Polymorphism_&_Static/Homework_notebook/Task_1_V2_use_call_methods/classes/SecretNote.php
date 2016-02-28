@@ -6,7 +6,7 @@
  * Date: 25.02.16
  * Time: 08:35
  */
-class SecretNote extends Note
+class SecretNote extends SimpleNote
 {
     private $pass;
 
@@ -15,13 +15,13 @@ class SecretNote extends Note
      * @param string $pass
      * @param int $numberOfPage
      */
-    public function __construct($arguments)
+    public function __construct($numPages, $pass)
     {
-        parent::__construct($arguments[0]);
-        $this->pass = $arguments[1];
+        parent::__construct($numPages);
+        $this->pass = $pass;
     }
 
-    public function __call($name, $arguments)
+    public function __call($name, $arguments = null)
     {
         if ($_GET['pass'] == $this->pass) {
             return $this->$name($arguments);

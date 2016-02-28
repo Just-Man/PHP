@@ -8,22 +8,24 @@
 
 require_once 'classes/autoload.php';
 
-//$simple = new SimpleNote(10);
+$simple = new SimpleNote(10);
 //
-//print_r($simple);
+print_r($simple);
 //
-//$simple -> writeInPage(2, 'Test', 'Some text');
+$simple->writeInPage([2, 'Test', 'Some text']);
 //
-//$all = $simple -> showAllPage();
+$all = $simple->showAllPage();
 
 
-$secure = new SecretNote([5, '123']);
+$secure = new SecretNote(5, '1234');
 
-//print_r($secure);
-$_GET['pass'] = '123';
+$_GET['pass'] = '1234';
 
 $secure->__call('writeInPage', [3, 'dfdsfsdf', 'tdfr']);
 
-$_GET['pass'] = '1234';
+$_GET['pass'] = '123';
 print_r($secure->__call('showPage', 3));
+
+$_GET['pass'] = '1234';
+print_r($secure->__call('showAllPage'));
 
